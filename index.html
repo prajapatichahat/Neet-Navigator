@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEET Navigator - Find your perfect medical college with our NEET rank-based college predictor, counselling guidance, and expert resources for MBBS, BDS, BAMS & BHMS admissions.">
+  <meta name="keywords" content="NEET UG, college predictor, MBBS admission, medical college, NEET counselling, seat matrix, NEET rank predictor">
+  <meta name="author" content="NEET Navigator">
+  <title>NEET Navigator — Find Your Perfect Medical College | College Predictor & Counselling</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER / NAVIGATION
+       ======================================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Logo -->
+      <a href="#" class="logo" id="logo">
+        <img src="images/logo.png" alt="NEET Navigator Logo">
+        <span class="logo-text">NEET<span>Navigator</span></span>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="colleges.html">Colleges</a>
+        <a href="predictor.html">Predictor</a>
+        <a href="seat-matrix.html">Seat Matrix</a>
+        <a href="videos.html">Videos</a>
+        <a href="counselling.html">Counselling</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login" id="loginBtn">Log In</a>
+        <a href="register.html" class="btn-register" id="registerBtn">Register Free</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          NEET UG 2026 Counselling Live
+        </div>
+
+        <h1 class="hero-title">
+          Find Your Perfect<br>
+          <span class="gradient-text">Medical College</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          NEET Rank-based college prediction, counselling guidance & expert resources — your one-stop platform for medical admissions.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="hero-search">
+          <div class="search-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <input type="number" id="heroSearchInput" placeholder="Enter your NEET Rank..." aria-label="Enter NEET Rank">
+          <button class="btn btn-primary" id="predictBtn">🎯 Predict Now</button>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-buttons">
+          <a href="predictor.html" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            Predict Now
+          </a>
+          <a href="colleges.html" class="btn btn-secondary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Explore Colleges
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3 data-count="500" data-suffix="+">0</h3>
+            <p>Medical Colleges</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-count="50000" data-suffix="+">0</h3>
+            <p>Students Guided</p>
+          </div>
+          <div class="stat-item">
+            <h3 data-count="98" data-suffix="%">0</h3>
+            <p>Accuracy Rate</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="images/hero-illustration.png" alt="Medical student illustration - NEET Navigator">
+
+          <!-- Floating Cards -->
+          <div class="float-card float-card-1">
+            <div class="float-icon" style="background: #E8F0FE; color: #1A73E8;">🏥</div>
+            <div class="float-title">AIIMS Delhi</div>
+            <div class="float-desc">Top Ranked</div>
+          </div>
+
+          <div class="float-card float-card-2">
+            <div class="float-icon" style="background: #ECFDF5; color: #059669;">✅</div>
+            <div class="float-title">Seat Confirmed</div>
+            <div class="float-desc">Rank 4,521</div>
+          </div>
+
+          <div class="float-card float-card-3">
+            <div class="float-icon" style="background: #FFF3E8; color: #F47B20;">📊</div>
+            <div class="float-title">98% Accurate</div>
+            <div class="float-desc">Predictions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       KEY FEATURES SECTION
+       ======================================== -->
+  <section class="features section-padding" id="features">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">✨ Why Choose Us</span>
+      </div>
+      <h2 class="section-title reveal">Everything You Need for <span class="highlight-orange">NEET Success</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Comprehensive tools and resources to help you navigate your medical admission journey with confidence.</p>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon orange">🎯</div>
+          <h3>College Predictor</h3>
+          <p>AI-powered rank-based predictions for accurate college matching across all categories.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon blue">🏛️</div>
+          <h3>College Listings</h3>
+          <p>Browse 500+ medical colleges with fees, cutoffs, rankings and detailed information.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon green">📊</div>
+          <h3>Seat Matrix Data</h3>
+          <p>Complete seat matrix for all counselling rounds with real-time vacancy updates.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon purple">📋</div>
+          <h3>Counselling Guidance</h3>
+          <p>Step-by-step counselling process guide for MCC, state & deemed universities.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon teal">🎬</div>
+          <h3>Video Learning</h3>
+          <p>Expert video tutorials on counselling strategy, college reviews & career guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       COURSES SECTION
+       ======================================== -->
+  <section class="courses section-padding" id="courses">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">📚 Popular Courses</span>
+      </div>
+      <h2 class="section-title reveal">Explore Medical <span class="highlight-blue">Courses</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Choose from top medical programs and find the right path for your healthcare career.</p>
+
+      <div class="courses-grid">
+        <!-- MBBS -->
+        <div class="course-card mbbs reveal reveal-delay-1">
+          <div class="course-card-image">
+            <div class="course-icon-wrapper">🩺</div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-tag">Medical</span>
+            <h3>MBBS</h3>
+            <p>Bachelor of Medicine & Bachelor of Surgery — The most sought-after medical degree for aspiring doctors.</p>
+            <a href="course-detail.html" class="btn btn-blue btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- BDS -->
+        <div class="course-card bds reveal reveal-delay-2">
+          <div class="course-card-image">
+            <div class="course-icon-wrapper">🦷</div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-tag">Dental</span>
+            <h3>BDS</h3>
+            <p>Bachelor of Dental Surgery — Specialize in dental science and oral healthcare with a promising career path.</p>
+            <a href="#" class="btn btn-blue btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- BAMS -->
+        <div class="course-card bams reveal reveal-delay-3">
+          <div class="course-card-image">
+            <div class="course-icon-wrapper">🌿</div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-tag">Ayurveda</span>
+            <h3>BAMS</h3>
+            <p>Bachelor of Ayurveda, Medicine & Surgery — Blend ancient Ayurvedic wisdom with modern medical practices.</p>
+            <a href="#" class="btn btn-blue btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- BHMS -->
+        <div class="course-card bhms reveal reveal-delay-4">
+          <div class="course-card-image">
+            <div class="course-icon-wrapper">💊</div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-tag">Homeopathy</span>
+            <h3>BHMS</h3>
+            <p>Bachelor of Homeopathic Medicine & Surgery — Practice holistic healing with homeopathic science.</p>
+            <a href="#" class="btn btn-blue btn-sm">View Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       COLLEGE LISTING SECTION
+       ======================================== -->
+  <section class="colleges section-padding" id="colleges">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">🏛️ Top Colleges</span>
+      </div>
+      <h2 class="section-title reveal">Featured Medical <span class="highlight-orange">Colleges</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Discover India's top-ranked medical institutions with comprehensive details.</p>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="colleges-toolbar reveal">
+        <div class="search-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="collegeSearchInput" placeholder="Search colleges by name or location..." aria-label="Search colleges">
+        </div>
+
+        <div class="filter-pills">
+          <button class="filter-pill active" id="filterAll">All</button>
+          <button class="filter-pill" id="filterGovernment">Government</button>
+          <button class="filter-pill" id="filterPrivate">Private</button>
+          <button class="filter-pill" id="filterDeemed">Deemed</button>
+        </div>
+      </div>
+
+      <!-- College Cards Grid -->
+      <div class="colleges-grid">
+        <!-- College 1 -->
+        <div class="college-card reveal reveal-delay-1">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="AIIMS New Delhi Campus">
+            <span class="college-badge">⭐ Top Ranked</span>
+          </div>
+          <div class="college-card-body">
+            <h3>AIIMS New Delhi</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                New Delhi, India
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹1,628/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.9
+            </div>
+            <a href="college-detail.html" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+
+        <!-- College 2 -->
+        <div class="college-card reveal reveal-delay-2">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="JIPMER Puducherry Campus">
+            <span class="college-badge">Government</span>
+          </div>
+          <div class="college-card-body">
+            <h3>JIPMER Puducherry</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Puducherry, India
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹2,440/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.8
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+
+        <!-- College 3 -->
+        <div class="college-card reveal reveal-delay-3">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="CMC Vellore Campus">
+            <span class="college-badge">Private</span>
+          </div>
+          <div class="college-card-body">
+            <h3>CMC Vellore</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Vellore, Tamil Nadu
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹25,000/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.7
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+
+        <!-- College 4 -->
+        <div class="college-card reveal reveal-delay-1">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="KMC Manipal Campus">
+            <span class="college-badge">Deemed</span>
+          </div>
+          <div class="college-card-body">
+            <h3>KMC Manipal</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Manipal, Karnataka
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹14,75,000/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.6
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+
+        <!-- College 5 -->
+        <div class="college-card reveal reveal-delay-2">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="Maulana Azad Medical College Campus">
+            <span class="college-badge">Government</span>
+          </div>
+          <div class="college-card-body">
+            <h3>Maulana Azad Medical College</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                New Delhi, India
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹3,200/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.8
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+
+        <!-- College 6 -->
+        <div class="college-card reveal reveal-delay-3">
+          <div class="college-card-image">
+            <img src="images/college-campus.png" alt="BHU Varanasi Campus">
+            <span class="college-badge">Government</span>
+          </div>
+          <div class="college-card-body">
+            <h3>IMS BHU Varanasi</h3>
+            <div class="college-meta">
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Varanasi, Uttar Pradesh
+              </div>
+              <div class="college-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+                Fees: <span class="fee">₹5,960/year</span>
+              </div>
+            </div>
+          </div>
+          <div class="college-card-footer">
+            <div class="college-rating">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.7
+            </div>
+            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PREDICTOR CTA SECTION
+       ======================================== -->
+  <section class="predictor-cta section-padding" id="predictor-cta">
+    <div class="container">
+      <div class="predictor-cta-content reveal">
+        <h2>Not Sure Which College <span>You'll Get?</span></h2>
+        <p>Enter your NEET rank and let our AI-powered predictor analyze your chances at 500+ medical colleges across India. Get personalized recommendations in seconds.</p>
+        <a href="predictor.html" class="btn btn-primary btn-lg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          Check College Predictor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       VIDEO SECTION
+       ======================================== -->
+  <section class="videos section-padding" id="videos">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">🎬 Video Resources</span>
+      </div>
+      <h2 class="section-title reveal">Learn from <span class="highlight-orange">Expert Videos</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Watch curated video guides on counselling strategy, college reviews, and career planning.</p>
+
+      <!-- Video Tabs -->
+      <div class="video-tabs reveal">
+        <button class="video-tab active" data-filter="all">All Videos</button>
+        <button class="video-tab" data-filter="free">Free</button>
+        <button class="video-tab" data-filter="premium">Premium</button>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="videos-grid">
+        <!-- Video 1 -->
+        <div class="video-card reveal reveal-delay-1" data-category="free">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="NEET Counselling Complete Guide">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">18:45</span>
+            <span class="video-premium-badge free">Free</span>
+          </div>
+          <div class="video-card-body">
+            <h3>NEET UG 2026 Counselling — Complete Process Explained</h3>
+            <p>12K views · 3 days ago</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card reveal reveal-delay-2" data-category="premium">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="College Selection Strategy">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">32:10</span>
+            <span class="video-premium-badge premium">Premium</span>
+          </div>
+          <div class="video-card-body">
+            <h3>Top 10 College Selection Strategies for NEET Aspirants</h3>
+            <p>8.5K views · 1 week ago</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card reveal reveal-delay-3" data-category="free">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="Choice Filling Guide">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">24:30</span>
+            <span class="video-premium-badge free">Free</span>
+          </div>
+          <div class="video-card-body">
+            <h3>MCC Choice Filling — Step-by-Step Guide 2026</h3>
+            <p>15K views · 5 days ago</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card reveal reveal-delay-1" data-category="premium">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="MBBS vs BDS Guide">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">28:15</span>
+            <span class="video-premium-badge premium">Premium</span>
+          </div>
+          <div class="video-card-body">
+            <h3>MBBS vs BDS vs BAMS — Which Career Is Right for You?</h3>
+            <p>6.2K views · 2 weeks ago</p>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video-card reveal reveal-delay-2" data-category="free">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="State Counselling Guide">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">22:00</span>
+            <span class="video-premium-badge free">Free</span>
+          </div>
+          <div class="video-card-body">
+            <h3>State Counselling vs MCC Counselling — Key Differences</h3>
+            <p>9.8K views · 1 week ago</p>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video-card reveal reveal-delay-3" data-category="premium">
+          <div class="video-thumbnail">
+            <img src="images/video-thumbnail.png" alt="Deemed University Guide">
+            <div class="play-overlay">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+            <span class="video-duration">35:20</span>
+            <span class="video-premium-badge premium">Premium</span>
+          </div>
+          <div class="video-card-body">
+            <h3>Complete Guide to Deemed Universities — Fees, Ranking & Tips</h3>
+            <p>4.1K views · 3 weeks ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       COUNSELLING INFO SECTION
+       ======================================== -->
+  <section class="counselling section-padding" id="counselling">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">📋 How It Works</span>
+      </div>
+      <h2 class="section-title reveal">NEET Counselling <span class="highlight-blue">Process</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Follow these simple steps to secure your medical seat through NEET counselling.</p>
+
+      <div class="counselling-steps">
+        <!-- Step 1 -->
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <h3>Registration</h3>
+          <p>Register on the MCC or state counselling website with your NEET score card and documents.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>Choice Filling</h3>
+          <p>Browse colleges and fill your preferred choices in order of priority during the counselling window.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <h3>Seat Allotment</h3>
+          <p>Seats are allotted based on your NEET rank, category, and choice order in multiple rounds.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-number">4</div>
+          <h3>Reporting</h3>
+          <p>Report to the allotted college with original documents and complete the admission formalities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS SECTION
+       ======================================== -->
+  <section class="testimonials section-padding" id="testimonials">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge">💬 Student Stories</span>
+      </div>
+      <h2 class="section-title reveal">What Our Students <span class="highlight-orange">Say</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Hear from students who used NEET Navigator to find their perfect medical college.</p>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "NEET Navigator predicted my college with pinpoint accuracy! I got into AIIMS Jodhpur just as the tool suggested. The counselling guidance was invaluable during the stressful admission process."
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-1.png" alt="Priya Sharma">
+            <div class="testimonial-author-info">
+              <h4>Priya Sharma</h4>
+              <p>MBBS, AIIMS Jodhpur</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "The seat matrix data and video tutorials were a lifesaver! I was confused about choice filling but the step-by-step guides made everything crystal clear. Highly recommended!"
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-2.png" alt="Rohit Patel">
+            <div class="testimonial-author-info">
+              <h4>Rohit Patel</h4>
+              <p>MBBS, GMC Mumbai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "As someone from a small town, I had no idea about the counselling process. NEET Navigator simplified everything. The predictor tool helped me set realistic expectations for my rank."
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-3.png" alt="Ananya Singh">
+            <div class="testimonial-author-info">
+              <h4>Ananya Singh</h4>
+              <p>BDS, KGMC Lucknow</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <span class="logo-text">NEET<span>Navigator</span></span>
+          <p>Your trusted companion for NEET UG counselling, college prediction, and medical admission guidance. Empowering students to find their dream medical college.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.94 29 29 0 00.46-5.25 29 29 0 00-.46-5.49z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg>
+            </a>
+            <a href="#" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.198 2.433a2.242 2.242 0 00-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 01-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.058 1.665.278 1.97.221.304.538.587.754.76.607.497 1.234.995 1.794 1.44l1.072.86c.18.143.41.263.639.338l-.003.057a2.02 2.02 0 00.153.872c.25.56.766.993 1.347 1.132l.002-.004-.004.087s.39.28.586.444c.201.169.47.416.74.705.543.578 1.192 1.439 1.524 2.509l.042.143.075.126c.192.323.548.7 1.038.793.49.093.88-.122 1.109-.3a9.175 9.175 0 001.395-1.403c.581-.694 1.17-1.576 1.486-2.3l3.06-1.863 2.042-1.245c.468-.272.942-.585 1.305-1.057.364-.472.604-1.15.408-1.878a2.257 2.257 0 00-1.077-1.326l-.007-.004z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">→ Home</a></li>
+            <li><a href="courses.html">→ Courses</a></li>
+            <li><a href="colleges.html">→ Colleges</a></li>
+            <li><a href="predictor.html">→ Predictor</a></li>
+            <li><a href="videos.html">→ Videos</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="seat-matrix.html">→ Seat Matrix</a></li>
+            <li><a href="counselling.html">→ Counselling Guide</a></li>
+            <li><a href="#">→ Blog</a></li>
+            <li><a href="#">→ FAQ</a></li>
+            <li><a href="#">→ Career Guidance</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="mailto:info@neetnavigator.com">📧 info@neetnavigator.com</a></li>
+            <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
+            <li><a href="contact.html">📍 Mumbai, Maharashtra</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 NEET Navigator. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
