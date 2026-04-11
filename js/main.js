@@ -47,27 +47,113 @@ function initMobileMenu() {
   const toggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   const overlay = document.querySelector('.mobile-overlay');
+  const navActions = document.querySelector('.nav-actions');
 
   if (!toggle || !navMenu) return;
 
+  // Inject nav-actions (Login/Register) into mobile menu
+  if (navActions && window.innerWidth <= 1024) {
+    injectMobileActions();
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1024) {
+      injectMobileActions();
+    } else {
+      removeMobileActions();
+    }
+  });
+
+  function injectMobileActions() {
+    if (navMenu.querySelector('.mobile-nav-actions')) return;
+
+    const mobileActions = document.createElement('div');
+    mobileActions.className = 'mobile-nav-actions';
+    mobileActions.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      margin-top: auto;
+      border-top: 1px solid #f1f5f9;
+    `;
+
+    const loginLink = navActions.querySelector('.btn-login');
+    const registerLink = navActions.querySelector('.btn-register');
+
+    if (loginLink) {
+      const loginClone = loginLink.cloneNode(true);
+      loginClone.style.cssText = `
+        display: block;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        color: #475569;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      `;
+      mobileActions.appendChild(loginClone);
+    }
+
+    if (registerLink) {
+      const regClone = registerLink.cloneNode(true);
+      regClone.style.cssText = `
+        display: block;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        background: linear-gradient(135deg, #F47B20 0%, #FF9A44 100%);
+        color: white;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      `;
+      mobileActions.appendChild(regClone);
+    }
+
+    navMenu.appendChild(mobileActions);
+  }
+
+  function removeMobileActions() {
+    const mobileActions = navMenu.querySelector('.mobile-nav-actions');
+    if (mobileActions) mobileActions.remove();
+  }
+
+  const openMenu = () => {
+    toggle.classList.add('active');
+    navMenu.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    toggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
   const toggleMenu = () => {
-    toggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    if (overlay) overlay.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    if (navMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   };
 
   toggle.addEventListener('click', toggleMenu);
 
   if (overlay) {
-    overlay.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', closeMenu);
   }
 
   // Close on nav link click
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       if (navMenu.classList.contains('active')) {
-        toggleMenu();
+        closeMenu();
       }
     });
   });
@@ -75,7 +161,7 @@ function initMobileMenu() {
   // Close on escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-      toggleMenu();
+      closeMenu();
     }
   });
 }
