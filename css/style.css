@@ -443,7 +443,7 @@ h6 {
 
 .btn-register:hover {
   transform: translateY(-1px);
-  box-shadow: var(--shadow-orange);
+  /* box-shadow: var(--shadow-orange); */
 }
 
 /* Mobile Menu Toggle */
