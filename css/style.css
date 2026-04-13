@@ -85,8 +85,8 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --shadow-orange: 0 8px 25px rgba(244, 123, 32, 0.3);
-  --shadow-blue: 0 8px 25px rgba(26, 115, 232, 0.3);
+  /* --shadow-orange: 0 8px 25px rgba(244, 123, 32, 0.3); */
+  /* --shadow-blue: 0 8px 25px rgba(26, 115, 232, 0.3); */
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -257,12 +257,12 @@ h6 {
 .btn-primary {
   background: var(--gradient-orange);
   color: var(--white);
-  box-shadow: var(--shadow-orange);
+  /* box-shadow: var(--shadow-orange); */
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(244, 123, 32, 0.4);
+  /* box-shadow: 0 12px 30px rgba(244, 123, 32, 0.4); */
 }
 
 .btn-secondary {
@@ -274,18 +274,18 @@ h6 {
 .btn-secondary:hover {
   background: var(--primary-orange-light);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  /* box-shadow: var(--shadow-lg); */
 }
 
 .btn-blue {
   background: var(--gradient-blue);
   color: var(--white);
-  box-shadow: var(--shadow-blue);
+  /* box-shadow: var(--shadow-blue); */
 }
 
 .btn-blue:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(26, 115, 232, 0.4);
+  /* box-shadow: 0 12px 30px rgba(26, 115, 232, 0.4); */
 }
 
 .btn-sm {
@@ -438,7 +438,8 @@ h6 {
   color: var(--white);
   border-radius: var(--radius-md);
   transition: all var(--transition-slow);
-  box-shadow: var(--shadow-sm);
+  /* box-shadow: var(--shadow-sm);
+   */
 }
 
 .btn-register:hover {
@@ -540,7 +541,7 @@ h6 {
   font-weight: 500;
   color: var(--gray-500);
   margin-bottom: var(--space-6);
-  box-shadow: var(--shadow-sm);
+  /* box-shadow: var(--shadow-sm); */
   animation: fadeInUp 0.6s ease forwards;
 }
 
@@ -585,7 +586,7 @@ h6 {
   background: var(--white);
   border-radius: var(--radius-xl);
   padding: var(--space-2);
-  box-shadow: var(--shadow-xl);
+  /* box-shadow: var(--shadow-xl); */
   border: 2px solid var(--gray-100);
   margin-bottom: var(--space-8);
   max-width: 500px;
@@ -595,7 +596,7 @@ h6 {
 
 .hero-search:focus-within {
   border-color: var(--primary-orange);
-  box-shadow: var(--shadow-xl), 0 0 0 4px rgba(244, 123, 32, 0.1);
+  /* box-shadow: var(--shadow-xl), 0 0 0 4px rgba(244, 123, 32, 0.1); */
 }
 
 .hero-search .search-icon {
@@ -1820,7 +1821,7 @@ h6 {
 
 .scroll-top:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(244, 123, 32, 0.5);
+  /* box-shadow: 0 12px 30px rgba(244, 123, 32, 0.5); */
 }
 
 /* ========================================
