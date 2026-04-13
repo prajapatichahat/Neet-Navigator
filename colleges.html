@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse 500+ medical colleges across India. Filter by location, fees, type. Find government, private, and deemed medical colleges for NEET UG admission.">
+  <meta name="description"
+    content="Browse 500+ medical colleges across India. Filter by location, fees, type. Find government, private, and deemed medical colleges for NEET UG admission.">
   <title>Medical Colleges — Browse & Compare | NEET Navigator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/logo.png">
 </head>
+
 <body>
   <!-- HEADER -->
-  <header class="header" id="header"><div class="container"><a href="index.html" class="logo"><img src="images/logo.png" alt="NEET Navigator Logo"><span class="logo-text">Ark_<span>Professor</span></span></a><nav class="nav-menu" id="navMenu"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="colleges.html" class="active">Colleges</a><a href="predictor.html">Predictor</a><a href="seat-matrix.html">Seat Matrix</a><a href="videos.html">Videos</a><a href="counselling.html">Counselling</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><a href="login.html" class="btn-login">Log In</a><a href="register.html" class="btn-register">Register Free</a></div><button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></header>
+  <header class="header" id="header">
+    <div class="container"><a href="index.html" class="logo"><img src="images/logo.png" alt="NEET Navigator Logo"><span
+          class="logo-text">Ark_<span>Professor</span></span></a>
+      <nav class="nav-menu" id="navMenu"><a href="index.html">Home</a><a href="courses.html">Courses</a><a
+          href="colleges.html" class="active">Colleges</a><a href="predictor.html">Predictor</a><a
+          href="seat-matrix.html">Seat Matrix</a><a href="videos.html">Videos</a><a
+          href="counselling.html">Counselling</a><a href="contact.html">Contact</a></nav>
+      <div class="nav-actions"><a href="login.html" class="btn-login">Log In</a><a href="register.html"
+          class="btn-register">Register Free</a></div><button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
   <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <!-- PAGE BANNER -->
-  <section class="page-banner"><div class="container"><div class="page-banner-content"><span class="section-badge"><i class="fa-solid fa-building-columns"></i> Colleges</span><h1>Medical <span class="highlight-orange">Colleges</span></h1><p>Browse 500+ medical colleges across India with detailed information.</p></div></div></section>
-  <nav class="breadcrumb"><div class="container"><ul class="breadcrumb-list"><li><a href="index.html">Home</a></li><li><span class="separator">›</span></li><li class="current">Colleges</li></ul></div></nav>
+  <section class="page-banner">
+    <div class="container">
+      <div class="page-banner-content"><span class="section-badge"><i class="fa-solid fa-building-columns"></i>
+          Colleges</span>
+        <h1>Medical <span class="highlight-orange">Colleges</span></h1>
+        <p>Browse 500+ medical colleges across India with detailed information.</p>
+      </div>
+    </div>
+  </section>
+  <nav class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="separator">›</span></li>
+        <li class="current">Colleges</li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- MAIN CONTENT -->
   <section class="section-padding" style="background: var(--off-white);">
@@ -82,18 +114,21 @@
             <input type="text" placeholder="Search colleges by name, location..." id="collegeSearchInput">
           </div>
 
-          <p style="color: var(--gray-400); font-size: var(--text-sm); margin-bottom: var(--space-5);">Showing <strong style="color: var(--gray-700);">248</strong> colleges</p>
+          <p style="color: var(--gray-400); font-size: var(--text-sm); margin-bottom: var(--space-5);">Showing <strong
+              style="color: var(--gray-700);">248</strong> colleges</p>
 
           <!-- College Cards -->
           <div class="content-grid-2">
             <!-- College Card 1 -->
             <div class="college-card reveal">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="AIIMS New Delhi"><span class="college-badge"><i class="fa-solid fa-star"></i> #1 Ranked</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="AIIMS New Delhi"><span
+                  class="college-badge"><i class="fa-solid fa-star"></i> #1 Ranked</span></div>
               <div class="college-card-body">
                 <h3>AIIMS New Delhi</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> New Delhi, India</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹1,628/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹1,628/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -104,12 +139,14 @@
 
             <!-- College Card 2 -->
             <div class="college-card reveal reveal-delay-1">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="JIPMER"><span class="college-badge">Government</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="JIPMER"><span
+                  class="college-badge">Government</span></div>
               <div class="college-card-body">
                 <h3>JIPMER Puducherry</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Puducherry, India</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹2,440/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹2,440/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -120,12 +157,14 @@
 
             <!-- College Card 3 -->
             <div class="college-card reveal">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="CMC Vellore"><span class="college-badge">Private</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="CMC Vellore"><span
+                  class="college-badge">Private</span></div>
               <div class="college-card-body">
                 <h3>CMC Vellore</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Vellore, Tamil Nadu</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹25,000/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹25,000/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -136,12 +175,14 @@
 
             <!-- College Card 4 -->
             <div class="college-card reveal reveal-delay-1">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="KMC Manipal"><span class="college-badge">Deemed</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="KMC Manipal"><span
+                  class="college-badge">Deemed</span></div>
               <div class="college-card-body">
                 <h3>KMC Manipal</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Manipal, Karnataka</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹14,75,000/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹14,75,000/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -152,12 +193,14 @@
 
             <!-- College Card 5 -->
             <div class="college-card reveal">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="MAMC Delhi"><span class="college-badge">Government</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="MAMC Delhi"><span
+                  class="college-badge">Government</span></div>
               <div class="college-card-body">
                 <h3>Maulana Azad Medical College</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> New Delhi, India</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹3,200/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹3,200/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -168,12 +211,14 @@
 
             <!-- College Card 6 -->
             <div class="college-card reveal reveal-delay-1">
-              <div class="college-card-image"><img src="images/college-campus.png" alt="BHU IMS"><span class="college-badge">Government</span></div>
+              <div class="college-card-image"><img src="images/college-campus.png" alt="BHU IMS"><span
+                  class="college-badge">Government</span></div>
               <div class="college-card-body">
                 <h3>IMS BHU Varanasi</h3>
                 <div class="college-meta">
                   <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Varanasi, UP</div>
-                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span class="fee">₹5,960/year</span></div>
+                  <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
+                      class="fee">₹5,960/year</span></div>
                 </div>
               </div>
               <div class="college-card-footer">
@@ -199,9 +244,84 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><span class="logo-text">Ark_<span>Professor</span></span><p>Your trusted companion for NEET UG counselling and medical admission guidance.</p></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li><li><a href="courses.html"><i class="fa-solid fa-chevron-right"></i> Courses</a></li><li><a href="colleges.html"><i class="fa-solid fa-chevron-right"></i> Colleges</a></li><li><a href="predictor.html"><i class="fa-solid fa-chevron-right"></i> Predictor</a></li></ul></div><div class="footer-column"><h4>Resources</h4><ul><li><a href="seat-matrix.html"><i class="fa-solid fa-chevron-right"></i> Seat Matrix</a></li><li><a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling</a></li><li><a href="videos.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><a href="mailto:info@ark.professor.com"><i class="fa-solid fa-envelope"></i> info@ark.professor.com</a></li><li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Mumbai, India</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <span class="logo-text">Ark_<span>Professor</span></span>. All Rights Reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div></div></footer>
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <span class="logo-text">Ark_<span>Professor</span></span>
+          <p>Your trusted companion for NEET UG counselling, college prediction, and medical admission guidance. Empowering students to find their dream medical college.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" aria-label="Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="courses.html"><i class="fa-solid fa-chevron-right"></i> Courses</a></li>
+            <li><a href="colleges.html"><i class="fa-solid fa-chevron-right"></i> Colleges</a></li>
+            <li><a href="predictor.html"><i class="fa-solid fa-chevron-right"></i> Predictor</a></li>
+            <li><a href="videos.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="seat-matrix.html"><i class="fa-solid fa-chevron-right"></i> Seat Matrix</a></li>
+            <li><a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling Guide</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Career Guidance</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="mailto:info@ark.professor.com"><i class="fa-solid fa-envelope"></i> info@ark.professor.com</a></li>
+            <li><a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 88499 88338</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Address</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ark_Professor. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i
+      class="fa-solid fa-chevron-up"></i></button>
   <script src="js/main.js"></script>
 </body>
+
 </html>
