@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Course-wise Fee Structure for Medical Colleges including MBBS, BDS, BAMS, and BHMS across Gujarat and India."
+    />
+    <title>
+      Fees Structure for Medical Courses | NEET Navigator
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <style>
+      /* ========================================
+         FEES STRUCTURE PAGE — Custom Styles
+         ======================================== */
+
+      /* -- Intro Section -- */
+      .fees-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto var(--space-16);
+      }
+
+      .fees-intro h2 {
+        font-size: var(--text-3xl);
+        font-weight: 800;
+        margin-bottom: var(--space-4);
+      }
+
+      .fees-intro p {
+        font-size: var(--text-lg);
+        color: var(--gray-500);
+      }
+
+      /* -- Course Tabs -- */
+      .course-tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-bottom: var(--space-12);
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-xl);
+        font-size: var(--text-base);
+        font-weight: 700;
+        color: var(--gray-600);
+        background: var(--white);
+        border: 2px solid var(--gray-200);
+        cursor: pointer;
+        transition: all var(--transition-base);
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .tab-btn:hover {
+        border-color: var(--primary-orange);
+        color: var(--primary-orange);
+        background: var(--primary-orange-light);
+        transform: translateY(-2px);
+      }
+
+      .tab-btn.active {
+        background: var(--gradient-orange);
+        color: var(--white);
+        border-color: transparent;
+        box-shadow: 0 8px 25px rgba(244, 123, 32, 0.3);
+      }
+
+      /* -- Fee Cards List -- */
+      .fee-cards-container {
+        display: none;
+        animation: fadeIn 0.4s ease forwards;
+      }
+
+      .fee-cards-container.active {
+        display: block;
+      }
+
+      .fee-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+      }
+
+      .fee-card {
+        background: var(--white);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        border: 1px solid var(--gray-100);
+        box-shadow: var(--shadow-sm);
+        transition: all var(--transition-slow);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .fee-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        transition: height var(--transition-base);
+      }
+
+      .fee-card[data-type="govt"]::before {
+        background: var(--gradient-blue);
+      }
+      .fee-card[data-type="private"]::before {
+        background: var(--gradient-orange);
+      }
+      .fee-card[data-type="deemed"]::before {
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      }
+
+      .fee-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .fee-card:hover::before {
+        height: 8px;
+      }
+
+      .fee-header {
+        margin-bottom: var(--space-6);
+        text-align: center;
+      }
+
+      .fee-card-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto var(--space-4);
+      }
+
+      .fee-card[data-type="govt"] .fee-card-icon {
+        background: var(--primary-blue-light);
+        color: var(--primary-blue);
+      }
+      .fee-card[data-type="private"] .fee-card-icon {
+        background: var(--primary-orange-light);
+        color: var(--primary-orange);
+      }
+      .fee-card[data-type="deemed"] .fee-card-icon {
+        background: #ede9fe;
+        color: #7c3aed;
+      }
+
+      .fee-card-title {
+        font-size: var(--text-xl);
+        font-weight: 800;
+        color: var(--gray-800);
+        margin-bottom: var(--space-2);
+      }
+
+      .fee-range {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        font-weight: 900;
+        color: var(--gray-800);
+      }
+
+      .fee-range span {
+        font-size: var(--text-sm);
+        color: var(--gray-400);
+        font-weight: 500;
+      }
+
+      .fee-breakdown {
+        flex-grow: 1;
+      }
+
+      .fee-breakdown-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 var(--space-6) 0;
+      }
+
+      .fee-breakdown-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-3) 0;
+        border-bottom: 1px dashed var(--gray-200);
+        font-size: var(--text-sm);
+      }
+
+      .fee-breakdown-list li:last-child {
+        border-bottom: none;
+      }
+
+      .breakdown-label {
+        color: var(--gray-500);
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .breakdown-label i {
+        color: var(--primary-orange);
+        font-size: 14px;
+      }
+
+      .breakdown-value {
+        font-weight: 700;
+        color: var(--gray-700);
+      }
+
+      .fee-footer {
+        text-align: center;
+        margin-top: auto;
+      }
+
+      .btn-view-colleges {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+        background: var(--gray-50);
+        color: var(--gray-700);
+        font-weight: 600;
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-base);
+        border: 1px solid var(--gray-200);
+        text-decoration: none;
+      }
+
+      .fee-card[data-type="govt"] .btn-view-colleges:hover {
+        background: var(--primary-blue);
+        color: var(--white);
+        border-color: var(--primary-blue);
+      }
+      .fee-card[data-type="private"] .btn-view-colleges:hover {
+        background: var(--primary-orange);
+        color: var(--white);
+        border-color: var(--primary-orange);
+      }
+      .fee-card[data-type="deemed"] .btn-view-colleges:hover {
+        background: #7c3aed;
+        color: var(--white);
+        border-color: #7c3aed;
+      }
+
+      /* Caution Banner */
+      .fee-caution {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-4);
+        margin-top: var(--space-12);
+      }
+
+      .fee-caution i {
+        color: #d97706;
+        font-size: 24px;
+      }
+
+      .fee-caution p {
+        font-size: var(--text-sm);
+        color: #92400e;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Additional Info Table */
+      .additional-costs {
+        margin-top: var(--space-16);
+      }
+
+      .additional-costs h3 {
+        font-size: var(--text-2xl);
+        text-align: center;
+        margin-bottom: var(--space-8);
+      }
+
+      .cost-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--white);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .cost-table th,
+      .cost-table td {
+        padding: var(--space-4) var(--space-6);
+        text-align: left;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .cost-table th {
+        background: var(--gray-50);
+        font-weight: 700;
+        color: var(--gray-700);
+        font-size: var(--text-sm);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .cost-table td {
+        font-size: var(--text-base);
+        color: var(--gray-600);
+      }
+
+      .cost-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .cost-table i {
+        color: var(--primary-orange);
+        margin-right: var(--space-2);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .fee-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .fee-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .course-tabs {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .tab-btn {
+          justify-content: center;
+        }
+
+        .cost-table th,
+        .cost-table td {
+          padding: var(--space-3) var(--space-4);
+          font-size: var(--text-sm);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.png" alt="Logo" /><span class="logo-text"
+            >Ark <span>Professor</span></span
+          ></a
+        >
+        <nav class="nav-menu" id="navMenu">
+          <a href="courses.html">Courses</a>
+          <a href="colleges.html">Colleges</a>
+          <a href="videos.html">Videos</a>
+          <a href="counselling.html">Counselling</a>
+          <a href="govt-scheme.html">Government Schemes</a>
+          <a href="fees-structure.html" class="active">Fees Structure</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="login.html" class="btn-login">Log In</a
+          ><a href="register.html" class="btn-register">Register Free</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="page-banner-content">
+          <span class="section-badge"
+            ><i class="fa-solid fa-indian-rupee-sign"></i> Financial Guide</span
+          >
+          <h1>
+            Course-Wise <span class="highlight-orange">Fee Structure</span>
+          </h1>
+          <p>
+            Detailed analysis of tuition fees, hostel charges, and other expenses for medical courses across different college types.
+          </p>
+        </div>
+      </div>
+    </section>
+    <nav class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li><span class="separator">›</span></li>
+          <li class="current">Fees Structure</li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="section-padding" style="background: var(--off-white)">
+      <div class="container">
+        <div class="fees-intro reveal">
+          <h2>Select a <span class="highlight-blue">Course</span></h2>
+          <p>Explore the typical fee ranges for Government, Private, and Deemed universities in India, focusing on Gujarat state quotas and management quotas.</p>
+        </div>
+
+        <!-- Course Tabs -->
+        <div class="course-tabs reveal">
+          <button class="tab-btn active" data-target="course-mbbs">
+            <i class="fa-solid fa-stethoscope"></i> MBBS
+          </button>
+          <button class="tab-btn" data-target="course-bds">
+            <i class="fa-solid fa-tooth"></i> BDS
+          </button>
+          <button class="tab-btn" data-target="course-bams">
+            <i class="fa-solid fa-leaf"></i> BAMS (Ayurveda)
+          </button>
+          <button class="tab-btn" data-target="course-bhms">
+            <i class="fa-solid fa-mortar-pestle"></i> BHMS (Homeopathy)
+          </button>
+        </div>
+
+        <!-- FEES DATA: MBBS -->
+        <div id="course-mbbs" class="fee-cards-container active">
+          <div class="fee-grid">
+            <!-- Govt -->
+            <div class="fee-card reveal" data-type="govt">
+              <div class="fee-header">
+                <div class="fee-card-icon">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <h3 class="fee-card-title">Government Colleges</h3>
+                <div class="fee-range">₹25K - ₹1.5L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Tuition Fee</span>
+                    <span class="breakdown-value">₹25,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Registration/Admin</span>
+                    <span class="breakdown-value">₹5,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> GMERS (Gujarat)</span>
+                    <span class="breakdown-value">₹3.3L - ₹15L</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="fee-footer">
+                <a href="colleges.html?type=govt" class="btn-view-colleges">
+                  View Govt Colleges <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Private / State Quota -->
+            <div class="fee-card reveal reveal-delay-1" data-type="private">
+              <div class="fee-header">
+                <div class="fee-card-icon">
+                  <i class="fa-solid fa-city"></i>
+                </div>
+                <h3 class="fee-card-title">Private (State Quota)</h3>
+                <div class="fee-range">₹6L - ₹18L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span>
+                    <span class="breakdown-value">₹8,00,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Development Fee</span>
+                    <span class="breakdown-value">₹50,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Management Quota</span>
+                    <span class="breakdown-value">₹15L - ₹25L</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="fee-footer">
+                <a href="colleges.html?type=private" class="btn-view-colleges">
+                  View Private Colleges <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Deemed -->
+            <div class="fee-card reveal reveal-delay-2" data-type="deemed">
+              <div class="fee-header">
+                <div class="fee-card-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="fee-card-title">Deemed Universities</h3>
+                <div class="fee-range">₹15L - ₹30L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span>
+                    <span class="breakdown-value">₹20,00,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> University Fee</span>
+                    <span class="breakdown-value">₹2,00,000</span>
+                  </li>
+                  <li>
+                    <span class="breakdown-label"><i class="fa-solid fa-check"></i> NRI Quota Range</span>
+                    <span class="breakdown-value">$35K - $55K</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="fee-footer">
+                <a href="colleges.html?type=deemed" class="btn-view-colleges">
+                  View Deemed Universities <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEES DATA: BDS -->
+        <div id="course-bds" class="fee-cards-container">
+          <div class="fee-grid">
+            <div class="fee-card" data-type="govt">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 class="fee-card-title">Government Colleges</h3>
+                <div class="fee-range">₹20K - ₹60K <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Tuition Fee</span> <span class="breakdown-value">₹20,000</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="fee-card" data-type="private">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-city"></i></div>
+                <h3 class="fee-card-title">Private (State Quota)</h3>
+                <div class="fee-range">₹2L - ₹5L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span> <span class="breakdown-value">₹3,00,000</span></li>
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Management Quota</span> <span class="breakdown-value">₹5L - ₹8L</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="fee-card" data-type="deemed">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3 class="fee-card-title">Deemed Universities</h3>
+                <div class="fee-range">₹3L - ₹7L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span> <span class="breakdown-value">₹4,50,000</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEES DATA: BAMS -->
+        <div id="course-bams" class="fee-cards-container">
+          <div class="fee-grid">
+            <div class="fee-card" data-type="govt">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 class="fee-card-title">Government Colleges</h3>
+                <div class="fee-range">₹15K - ₹50K <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Tuition Fee</span> <span class="breakdown-value">₹15,000</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="fee-card" data-type="private">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-city"></i></div>
+                <h3 class="fee-card-title">Private Colleges</h3>
+                <div class="fee-range">₹1.5L - ₹4L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span> <span class="breakdown-value">₹2,50,000</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEES DATA: BHMS -->
+        <div id="course-bhms" class="fee-cards-container">
+          <div class="fee-grid">
+            <div class="fee-card" data-type="govt">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 class="fee-card-title">Government Colleges</h3>
+                <div class="fee-range">₹15K - ₹40K <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Tuition Fee</span> <span class="breakdown-value">₹15,000</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="fee-card" data-type="private">
+              <div class="fee-header">
+                <div class="fee-card-icon"><i class="fa-solid fa-city"></i></div>
+                <h3 class="fee-card-title">Private Colleges</h3>
+                <div class="fee-range">₹1L - ₹2.5L <span>/ year</span></div>
+              </div>
+              <div class="fee-breakdown">
+                <ul class="fee-breakdown-list">
+                  <li><span class="breakdown-label"><i class="fa-solid fa-check"></i> Average Tuition Fee</span> <span class="breakdown-value">₹1,50,000</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fee-caution reveal">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <p><strong>Important Note:</strong> The fee structures mentioned above are approximate ranges and subject to change by the respective regulatory bodies (NMC/DCI/NCISM) and state fee regulatory committees. Institutional fees, development fees, and security deposits vary significantly from college to college.</p>
+        </div>
+
+        <div class="additional-costs reveal">
+          <h3>Other Common <span class="highlight-orange">Expenses</span></h3>
+          <div class="cost-table-wrapper" style="overflow-x: auto;">
+            <table class="cost-table">
+              <thead>
+                <tr>
+                  <th>Expense Category</th>
+                  <th>Government Colleges</th>
+                  <th>Private/Deemed Colleges</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fa-solid fa-bed"></i> Hostel Fees</td>
+                  <td>₹2,000 - ₹12,000 / year</td>
+                  <td>₹75,000 - ₹2,50,000 / year</td>
+                  <td>AC/Non-AC, Single/Twin sharing variants.</td>
+                </tr>
+                <tr>
+                  <td><i class="fa-solid fa-utensils"></i> Mess Charges</td>
+                  <td>₹2,500 - ₹4,000 / month</td>
+                  <td>₹3,500 - ₹8,000 / month</td>
+                  <td>Sometimes included in total hostel fees.</td>
+                </tr>
+                <tr>
+                  <td><i class="fa-solid fa-shield-halved"></i> Refundable Security Deposit</td>
+                  <td>₹5,000 - ₹20,000 (Once)</td>
+                  <td>₹50,000 - ₹2,00,000 (Once)</td>
+                  <td>Refunded at the end of the course.</td>
+                </tr>
+                <tr>
+                  <td><i class="fa-solid fa-book-medical"></i> Clinical Materials / Books</td>
+                  <td>₹10,000 - ₹25,000 / year</td>
+                  <td>₹15,000 - ₹40,000 / year</td>
+                  <td>Costs for standard medical books, aprons, kits.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="predictor-cta" style="padding: var(--space-16) 0">
+      <div class="container">
+        <div class="predictor-cta-content reveal">
+          <h2>Concerned About <span>High Fees?</span></h2>
+          <p>
+            Check out our Government Schemes and Scholarship page or speak with our counsellors for loan assistance.
+          </p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="govt-scheme.html" class="btn btn-secondary btn-lg"
+              ><i class="fa-solid fa-landmark"></i> View Scholarships</a
+            >
+            <a href="contact.html" class="btn btn-primary btn-lg"
+              ><i class="fa-solid fa-headset"></i> Get Expert Guidance</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo-text">Ark <span>Professor</span></span>
+            <p>
+              Your trusted companion for NEET UG counselling, college prediction,
+              and medical admission guidance. Empowering students to find their
+              dream medical college.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" aria-label="Telegram"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+              <li><a href="courses.html"><i class="fa-solid fa-chevron-right"></i> Courses</a></li>
+              <li><a href="colleges.html"><i class="fa-solid fa-chevron-right"></i> Colleges</a></li>
+              <li><a href="videos.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling Guide</a></li>
+              <li><a href="govt-scheme.html"><i class="fa-solid fa-chevron-right"></i> Govt Schemes</a></li>
+              <li><a href="fees-structure.html"><i class="fa-solid fa-chevron-right"></i> Fees Structure</a></li>
+              <li><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="mailto:info@ark.professor.com"><i class="fa-solid fa-envelope"></i> info@ark.professor.com</a></li>
+              <li><a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 88499 88338</a></li>
+              <li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Address</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Ark Professor. All Rights Reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Tab Switching Logic
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const containers = document.querySelectorAll(".fee-cards-container");
+
+        tabBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+            // Remove active class from all tabs and containers
+            tabBtns.forEach(b => b.classList.remove("active"));
+            containers.forEach(c => c.classList.remove("active"));
+
+            // Add active class to clicked tab and corresponding container
+            btn.classList.add("active");
+            const targetId = btn.getAttribute("data-target");
+            document.getElementById(targetId).classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Complete list of Government Schemes, Scholarships and Financial Aid for NEET medical students in India. Find eligibility, benefits and official links." />
+  <title>
+    Government Schemes & Scholarships for Medical Students | NEET Navigator
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <style>
+    /* ========================================
+         GOVT SCHEMES PAGE — Custom Styles
+         ======================================== */
+
+    /* -- Stats Row -- */
+    .schemes-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+
+    .scheme-stat-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      border: 1px solid var(--gray-100);
+      transition: all var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scheme-stat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    }
+
+    .scheme-stat-card:nth-child(1)::before {
+      background: var(--gradient-orange);
+    }
+
+    .scheme-stat-card:nth-child(2)::before {
+      background: var(--gradient-blue);
+    }
+
+    .scheme-stat-card:nth-child(3)::before {
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+
+    .scheme-stat-card:nth-child(4)::before {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    }
+
+    .scheme-stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .scheme-stat-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto var(--space-4);
+    }
+
+    .scheme-stat-icon.orange {
+      background: var(--primary-orange-light);
+      color: var(--primary-orange);
+    }
+
+    .scheme-stat-icon.blue {
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+    }
+
+    .scheme-stat-icon.green {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .scheme-stat-icon.purple {
+      background: #ede9fe;
+      color: #7c3aed;
+    }
+
+    .scheme-stat-card h3 {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      margin-bottom: var(--space-1);
+    }
+
+    .scheme-stat-card p {
+      font-size: var(--text-sm);
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+
+    /* -- Filter Tabs -- */
+    .scheme-filters {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-10);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--gray-500);
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+      background: var(--primary-orange-light);
+    }
+
+    .filter-btn.active {
+      background: var(--gradient-orange);
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    /* -- Scheme List -- */
+    .scheme-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .scheme-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--space-8);
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      border: 1px solid var(--gray-100);
+      transition: all var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scheme-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+      transition: width var(--transition-slow);
+    }
+
+    .scheme-card[data-category="central"]::before {
+      background: var(--gradient-blue);
+    }
+
+    .scheme-card[data-category="state"]::before {
+      background: var(--gradient-orange);
+    }
+
+    .scheme-card[data-category="scholarship"]::before {
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+
+    .scheme-card[data-category="loan"]::before {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    }
+
+    .scheme-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: transparent;
+    }
+
+    .scheme-card:hover::before {
+      width: 6px;
+    }
+
+    /* Scheme Icon */
+    .scheme-icon-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .scheme-icon-wrap.central {
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+    }
+
+    .scheme-icon-wrap.state {
+      background: var(--primary-orange-light);
+      color: var(--primary-orange);
+    }
+
+    .scheme-icon-wrap.scholarship {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .scheme-icon-wrap.loan {
+      background: #ede9fe;
+      color: #7c3aed;
+    }
+
+    /* Scheme Body */
+    .scheme-body {
+      min-width: 0;
+    }
+
+    .scheme-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .scheme-body h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--gray-800);
+      line-height: 1.3;
+    }
+
+    .scheme-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: 2px var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .scheme-tag.central {
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+    }
+
+    .scheme-tag.state {
+      background: var(--primary-orange-light);
+      color: var(--primary-orange);
+    }
+
+    .scheme-tag.scholarship {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .scheme-tag.loan {
+      background: #ede9fe;
+      color: #7c3aed;
+    }
+
+    .scheme-ministry {
+      font-size: var(--text-sm);
+      color: var(--gray-400);
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+    }
+
+    .scheme-ministry i {
+      margin-right: var(--space-1);
+      font-size: 11px;
+    }
+
+    .scheme-desc {
+      font-size: var(--text-base);
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: var(--space-4);
+    }
+
+    .scheme-meta {
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .scheme-meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .scheme-meta-item i {
+      color: var(--primary-orange);
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* Scheme Action */
+    .scheme-action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      flex-shrink: 0;
+    }
+
+    .btn-visit-govt {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-blue);
+      color: var(--white);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-slow);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-visit-govt::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-100%);
+      transition: transform var(--transition-slow);
+    }
+
+    .btn-visit-govt:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn-visit-govt:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(26, 115, 232, 0.35);
+    }
+
+    .btn-visit-govt i {
+      font-size: 12px;
+      transition: transform var(--transition-base);
+    }
+
+    .btn-visit-govt:hover i {
+      transform: translateX(3px);
+    }
+
+    .btn-details {
+      font-size: var(--text-xs);
+      color: var(--gray-400);
+      font-weight: 500;
+      transition: color var(--transition-base);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+
+    .btn-details:hover {
+      color: var(--primary-orange);
+    }
+
+    /* -- Info Banner -- */
+    .info-banner {
+      background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-6);
+      margin-bottom: var(--space-10);
+    }
+
+    .info-banner-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-xl);
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .info-banner-content h4 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--gray-800);
+      margin-bottom: var(--space-2);
+    }
+
+    .info-banner-content p {
+      font-size: var(--text-sm);
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    /* -- Responsive -- */
+    @media (max-width: 1024px) {
+      .scheme-card {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+
+      .scheme-icon-wrap {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+      }
+
+      .scheme-action {
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .btn-visit-govt {
+        flex: 1;
+        justify-content: center;
+      }
+
+      .schemes-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .schemes-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+      }
+
+      .scheme-stat-card {
+        padding: var(--space-6) var(--space-4);
+      }
+
+      .scheme-stat-card h3 {
+        font-size: var(--text-2xl);
+      }
+
+      .scheme-meta {
+        gap: var(--space-3);
+      }
+
+      .scheme-card {
+        padding: var(--space-6);
+      }
+
+      .info-banner {
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo" /><span class="logo-text">Ark
+          <span>Professor</span></span></a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="courses.html">Courses</a>
+        <a href="colleges.html">Colleges</a>
+        <a href="videos.html">Videos</a>
+        <a href="counselling.html">Counselling</a>
+        <a href="govt-scheme.html" class="active">Government Schemes</a>
+        <a href="fees-structure.html">Fees Structure</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Log In</a><a href="register.html" class="btn-register">Register Free</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="page-banner-content">
+        <span class="section-badge"><i class="fa-solid fa-landmark"></i> Financial Aid</span>
+        <h1>
+          Government <span class="highlight-orange">Schemes</span> &
+          Scholarships
+        </h1>
+        <p>
+          Explore scholarships, financial aid, and government schemes designed
+          to support NEET medical students across India.
+        </p>
+      </div>
+    </div>
+  </section>
+  <nav class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><span class="separator">›</span></li>
+        <li class="current">Government Schemes</li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- STATS OVERVIEW -->
+  <section class="section-padding" style="background: var(--off-white)">
+    <div class="container">
+      <div class="schemes-stats reveal">
+        <div class="scheme-stat-card">
+          <div class="scheme-stat-icon orange">
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+          <h3>15+</h3>
+          <p>Government Schemes</p>
+        </div>
+        <div class="scheme-stat-card">
+          <div class="scheme-stat-icon blue">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+          </div>
+          <h3>₹10L+</h3>
+          <p>Max Financial Aid</p>
+        </div>
+        <div class="scheme-stat-card">
+          <div class="scheme-stat-icon green">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h3>50L+</h3>
+          <p>Students Benefited</p>
+        </div>
+        <div class="scheme-stat-card">
+          <div class="scheme-stat-icon purple">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <h3>Central & State</h3>
+          <p>Level Coverage</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div class="info-banner reveal">
+        <div class="info-banner-icon">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div class="info-banner-content">
+          <h4>How to Use This List</h4>
+          <p>
+            Browse through the list of government schemes below. Each card
+            shows eligibility, benefits and a direct link to the official
+            government website where you can apply. Click
+            <strong>"Visit Government Website"</strong> to go to the official
+            portal for application and detailed guidelines.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="scheme-filters reveal">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fa-solid fa-border-all"></i> All Schemes
+        </button>
+        <button class="filter-btn" data-filter="central">
+          <i class="fa-solid fa-landmark"></i> Central Govt
+        </button>
+        <button class="filter-btn" data-filter="state">
+          <i class="fa-solid fa-map-location-dot"></i> State Govt (Gujarat)
+        </button>
+        <button class="filter-btn" data-filter="scholarship">
+          <i class="fa-solid fa-graduation-cap"></i> Scholarships
+        </button>
+        <button class="filter-btn" data-filter="loan">
+          <i class="fa-solid fa-hand-holding-dollar"></i> Loans & Aid
+        </button>
+      </div>
+
+      <!-- SCHEME LIST -->
+      <div class="scheme-list" id="schemeList">
+        <!-- 1 — MYSY -->
+        <div class="scheme-card reveal" data-category="state">
+          <div class="scheme-icon-wrap state">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>MYSY — Mukhyamantri Yuva Swavalamban Yojana</h3>
+              <span class="scheme-tag state">State — Gujarat</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Department of Education,
+              Govt of Gujarat
+            </p>
+            <p class="scheme-desc">
+              50% tuition fee assistance up to ₹2 Lakh/year for general
+              category students pursuing professional courses including MBBS in
+              Gujarat. Hostel assistance also available for eligible students.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> General Category</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Up to ₹2
+                Lakh/Year</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-calendar"></i> Annual Renewal</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://mysy.guj.nic.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-mysy">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2 — Post-Matric SC/ST -->
+        <div class="scheme-card reveal" data-category="central">
+          <div class="scheme-icon-wrap central">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Post-Matric Scholarship for SC Students</h3>
+              <span class="scheme-tag central">Central Govt</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Social Justice &
+              Empowerment
+            </p>
+            <p class="scheme-desc">
+              Full tuition fee reimbursement and maintenance allowance for
+              SC/ST students pursuing post-matric courses (Class XI onwards),
+              including MBBS. Family income limit applies.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> SC/ST Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Full Tuition
+                Fee</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit:
+                ₹2.5L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-postmatric-sc">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 — Post-Matric OBC -->
+        <div class="scheme-card reveal" data-category="central">
+          <div class="scheme-icon-wrap central">
+            <i class="fa-solid fa-users-rectangle"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Post-Matric Scholarship for OBC Students</h3>
+              <span class="scheme-tag central">Central Govt</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Social Justice &
+              Empowerment
+            </p>
+            <p class="scheme-desc">
+              Financial assistance to OBC students for pursuing higher
+              education including medical courses. Covers tuition fee and
+              provides maintenance allowance based on course type.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> OBC Category</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Tuition +
+                Maintenance</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit: ₹3L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-postmatric-obc">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 — Freeship Card -->
+        <div class="scheme-card reveal" data-category="state">
+          <div class="scheme-icon-wrap state">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Freeship Card Scheme (Gujarat)</h3>
+              <span class="scheme-tag state">State — Gujarat</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Tribal Development Dept,
+              Gujarat
+            </p>
+            <p class="scheme-desc">
+              Free education for SC/ST students in Gujarat. Tuition fee and
+              exam fees are directly paid to the institute by the state
+              government. Students also receive stipend for books and
+              stationery.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> SC/ST Students
+                (Gujarat)</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Full Fee
+                Waiver</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-book"></i> Books & Stationery</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://esamajkalyan.gujarat.gov.in/" target="_blank" rel="noopener noreferrer"
+              class="btn-visit-govt" id="btn-visit-freeship">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5 — PM Vidyalaxmi -->
+        <div class="scheme-card reveal" data-category="loan">
+          <div class="scheme-icon-wrap loan">
+            <i class="fa-solid fa-piggy-bank"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>PM Vidyalaxmi — Education Loan Scheme</h3>
+              <span class="scheme-tag loan">Loan & Aid</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Education, Govt
+              of India
+            </p>
+            <p class="scheme-desc">
+              Collateral-free education loans up to ₹10 Lakh for students from
+              economically weaker sections. Interest subsidy provided during
+              moratorium period. Available for medical & professional courses.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> EWS Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Up to ₹10
+                Lakh</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-percent"></i> Interest Subsidy</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://www.vidyalakshmi.co.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-vidyalaxmi">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6 — Central Sector Scholarship -->
+        <div class="scheme-card reveal" data-category="scholarship">
+          <div class="scheme-icon-wrap scholarship">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Central Sector Scheme of Scholarship</h3>
+              <span class="scheme-tag scholarship">Scholarship</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Dept of Higher Education,
+              MHRD
+            </p>
+            <p class="scheme-desc">
+              Merit-based scholarship for students scoring above 80th
+              percentile in Class XII. ₹20,000/year during graduation. No
+              income ceiling for eligibility but priority to economically
+              weaker.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Merit-Based (80th
+                %ile)</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i>
+                ₹20,000/Year</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-trophy"></i> Top Performers</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-cssscholarship">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7 — AICTE Pragati -->
+        <div class="scheme-card reveal" data-category="scholarship">
+          <div class="scheme-icon-wrap scholarship">
+            <i class="fa-solid fa-venus"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>AICTE Pragati Scholarship for Girls</h3>
+              <span class="scheme-tag scholarship">Scholarship</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> All India Council for
+              Technical Education (AICTE)
+            </p>
+            <p class="scheme-desc">
+              Scholarship specifically for girl students pursuing technical
+              education. Up to ₹50,000 per year as a tuition fee waiver or
+              academic expenses. Aims to encourage women in professional fields
+              including medicine.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Girl Students
+                Only</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Up to
+                ₹50,000/Year</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit:
+                ₹8L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://www.aicte-india.org/schemes/students-development-schemes/Pragati" target="_blank"
+              rel="noopener noreferrer" class="btn-visit-govt" id="btn-visit-pragati">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 8 — Minority Scholarship -->
+        <div class="scheme-card reveal" data-category="central">
+          <div class="scheme-icon-wrap central">
+            <i class="fa-solid fa-mosque"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Post-Matric Scholarship for Minorities</h3>
+              <span class="scheme-tag central">Central Govt</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Minority
+              Affairs, India
+            </p>
+            <p class="scheme-desc">
+              Scholarship for minority community students (Muslim, Christian,
+              Sikh, Buddhist, Jain, Parsi) pursuing higher education. Covers
+              admission fee, tuition fee, and maintenance allowance.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Minority
+                Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Full
+                Tuition</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit:
+                ₹2L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-minority">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 9 — Sitaram Jindal Scholarship -->
+        <div class="scheme-card reveal" data-category="scholarship">
+          <div class="scheme-icon-wrap scholarship">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Sitaram Jindal Foundation Scholarship</h3>
+              <span class="scheme-tag scholarship">Scholarship</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Sitaram Jindal Foundation
+            </p>
+            <p class="scheme-desc">
+              Financial support for meritorious and economically weak students
+              pursuing MBBS and other professional courses. Provides monthly
+              stipend and book allowance throughout the course duration.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Merit + Need
+                Based</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Monthly
+                Stipend</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-clock"></i> Full Course Duration</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://www.sitaramjindalfoundation.org/" target="_blank" rel="noopener noreferrer"
+              class="btn-visit-govt" id="btn-visit-jindal">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 10 — Kishore Vaigyanik Protsahan Yojana -->
+        <div class="scheme-card reveal" data-category="central">
+          <div class="scheme-icon-wrap central">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>KVPY — Kishore Vaigyanik Protsahan Yojana</h3>
+              <span class="scheme-tag central">Central Govt</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Dept of Science &
+              Technology, Govt of India
+            </p>
+            <p class="scheme-desc">
+              National fellowship program for students pursuing basic science
+              courses/research. Monthly fellowship of ₹5,000–₹7,000 and
+              annual contingency grant. Helpful for MBBS students interested in
+              medical research.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Science Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i>
+                ₹5,000–₹7,000/Month</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-microscope"></i> Research Focus</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://kvpy.iisc.ac.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-kvpy">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 11 — Gujarat Govt EBC Scholarship -->
+        <div class="scheme-card reveal" data-category="state">
+          <div class="scheme-icon-wrap state">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>
+                EBC Scholarship — Economically Backward Class (Gujarat)
+              </h3>
+              <span class="scheme-tag state">State — Gujarat</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Dept of Social Justice,
+              Gujarat
+            </p>
+            <p class="scheme-desc">
+              Scholarship for students from Economically Backward Classes
+              (EBC) in Gujarat with family income below ₹1.5 Lakh/year. Covers
+              tuition fees for medical and professional courses at government
+              colleges.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> EBC Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Full
+                Tuition</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit:
+                ₹1.5L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://esamajkalyan.gujarat.gov.in/" target="_blank" rel="noopener noreferrer"
+              class="btn-visit-govt" id="btn-visit-ebc">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 12 — National Scholarship Portal -->
+        <div class="scheme-card reveal" data-category="central">
+          <div class="scheme-icon-wrap central">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>National Scholarship Portal (NSP)</h3>
+              <span class="scheme-tag central">Central Govt</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Electronics &
+              Information Technology
+            </p>
+            <p class="scheme-desc">
+              One-stop portal for all central and state government scholarship
+              schemes. Apply for multiple scholarships at once including
+              post-matric, merit-cum-means, and minority scholarships for
+              medical students.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> All Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-layer-group"></i> Multiple
+                Schemes</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-desktop"></i> Single-Window
+                Apply</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-nsp">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 13 — Vidyasiri Scholarship -->
+        <div class="scheme-card reveal" data-category="loan">
+          <div class="scheme-icon-wrap loan">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>Padho Pardesh — Interest Subsidy on Education Loans</h3>
+              <span class="scheme-tag loan">Loan & Aid</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Ministry of Minority
+              Affairs, India
+            </p>
+            <p class="scheme-desc">
+              100% interest subsidy on education loans during the moratorium
+              period for students from minority communities pursuing
+              professional and technical courses including MBBS abroad or in
+              India.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Minority
+                Students</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-percent"></i> 100% Interest
+                Subsidy</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-wallet"></i> Income Limit:
+                ₹6L/Year</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://www.minorityaffairs.gov.in/" target="_blank" rel="noopener noreferrer"
+              class="btn-visit-govt" id="btn-visit-padhopardesh">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 14 — INSPIRE Scholarship -->
+        <div class="scheme-card reveal" data-category="scholarship">
+          <div class="scheme-icon-wrap scholarship">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="scheme-body">
+            <div class="scheme-header">
+              <h3>INSPIRE Scholarship (SHE) — DST</h3>
+              <span class="scheme-tag scholarship">Scholarship</span>
+            </div>
+            <p class="scheme-ministry">
+              <i class="fa-solid fa-building"></i> Dept of Science &
+              Technology, Govt of India
+            </p>
+            <p class="scheme-desc">
+              Scholarship for Higher Education (SHE) component provides
+              ₹80,000/year for students pursuing natural & basic sciences at
+              the undergraduate level. Applicable for MBBS students with strong
+              science background.
+            </p>
+            <div class="scheme-meta">
+              <span class="scheme-meta-item"><i class="fa-solid fa-user-check"></i> Top 1% in Class
+                XII</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i>
+                ₹80,000/Year</span>
+              <span class="scheme-meta-item"><i class="fa-solid fa-trophy"></i> Merit-Based</span>
+            </div>
+          </div>
+          <div class="scheme-action">
+            <a href="https://online-inspire.gov.in/" target="_blank" rel="noopener noreferrer" class="btn-visit-govt"
+              id="btn-visit-inspire">
+              Visit Govt Website
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="predictor-cta" style="padding: var(--space-16) 0">
+    <div class="container">
+      <div class="predictor-cta-content reveal">
+        <h2>Need Help With <span>Eligibility?</span></h2>
+        <p>
+          Our experts can guide you through the process of applying for
+          government schemes and scholarships.
+        </p>
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-headset"></i> Contact Expert
+          Counsellor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">Ark <span>Professor</span></span>
+          <p>
+            Your trusted companion for NEET UG counselling, college prediction,
+            and medical admission guidance. Empowering students to find their
+            dream medical college.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>
+              <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+            </li>
+            <li>
+              <a href="courses.html"><i class="fa-solid fa-chevron-right"></i> Courses</a>
+            </li>
+            <li>
+              <a href="colleges.html"><i class="fa-solid fa-chevron-right"></i> Colleges</a>
+            </li>
+            <li>
+              <a href="videos.html"><i class="fa-solid fa-chevron-right"></i> Videos</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li>
+              <a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling
+                Guide</a>
+            </li>
+            <li>
+              <a href="govt-scheme.html"><i class="fa-solid fa-chevron-right"></i> Govt Schemes</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chevron-right"></i> Blog</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <a href="mailto:info@ark.professor.com"><i class="fa-solid fa-envelope"></i>
+                info@ark.professor.com</a>
+            </li>
+            <li>
+              <a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 88499 88338</a>
+            </li>
+            <li>
+              <a href="contact.html"><i class="fa-solid fa-location-dot"></i> Address</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ark Professor. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ---- Filter Functionality ----
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const schemeCards = document.querySelectorAll(".scheme-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Update active button
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.filter;
+
+          schemeCards.forEach((card) => {
+            if (filter === "all" || card.dataset.category === filter) {
+              card.style.display = "";
+              card.style.animation = "fadeInUp 0.4s ease forwards";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
