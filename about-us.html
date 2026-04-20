@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="About NEET Navigator — Learn about our mission, vision, and team dedicated to guiding medical aspirants.">
+  <title>About Us | NEET Navigator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .mission-vision-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      border: 1px solid var(--gray-100);
+      transition: all var(--transition-base);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-card h3 {
+      font-size: 2.5rem;
+      color: var(--primary-orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card p {
+      color: var(--gray-600);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mission-vision-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <span class="logo-text">Ark <span>Professor</span></span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="courses.html">Courses</a>
+        <a href="colleges.html">Colleges</a>
+        <a href="videos.html">Videos</a>
+        <a href="counselling.html">Counselling</a>
+        <a href="govt-scheme.html">Government Schemes</a>
+        <a href="fees-structure.html">Fees Structure</a>
+        <a href="about-us.html" class="active">About Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-login">Log In</a>
+        <a href="register.html" class="btn-register">Register Free</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <section class="page-banner" style="background: var(--gradient-hero); padding: 8rem 0 4rem; text-align: center;">
+    <div class="container">
+      <div class="page-banner-content">
+        <span class="section-badge"><i class="fa-solid fa-circle-info"></i> About Us</span>
+        <h1 style="font-size: var(--text-5xl); margin-bottom: 1rem;">Our <span class="highlight-orange">Story</span>
+        </h1>
+        <p style="color: var(--gray-600); font-size: var(--text-lg); max-width: 600px; margin: 0 auto;">Empowering
+          medical aspirants with data-driven predictions and expert counselling guidance since day one.</p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="breadcrumb"
+    style="padding: 1rem 0; background: var(--off-white); border-bottom: 1px solid var(--gray-100);">
+    <div class="container">
+      <ul
+        style="display: flex; gap: 0.5rem; align-items: center; list-style: none; padding: 0; margin: 0; font-size: var(--text-sm); color: var(--gray-500);">
+        <li><a href="index.html" style="color: var(--primary-blue); font-weight: 500;">Home</a></li>
+        <li><span>›</span></li>
+        <li style="color: var(--gray-700);">About Us</li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <h2 style="font-size: var(--text-3xl); margin-bottom: 1.5rem;">Who Are We?</h2>
+          <p style="margin-bottom: 1rem; color: var(--gray-600); line-height: 1.7;">NEET Navigator is India's most
+            trusted platform for medical admissions. Founded by educational experts and former medical students, we
+            understand the immense pressure and confusion surrounding the NEET counselling process.</p>
+          <p style="margin-bottom: 1rem; color: var(--gray-600); line-height: 1.7;">Our comprehensive suite of tools,
+            inclusive of an AI-powered college predictor, detailed seat matrix data, and expert counselling guidance, is
+            designed specifically to bring transparency to the complex medical admission system.</p>
+          <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fa-solid fa-check-circle"
+                style="color: var(--success); margin-right: 0.75rem; font-size: 1.125rem;"></i> <span
+                style="font-weight: 500;">Transparent & Data-Driven Accuracy</span></li>
+            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fa-solid fa-check-circle"
+                style="color: var(--success); margin-right: 0.75rem; font-size: 1.125rem;"></i> <span
+                style="font-weight: 500;">98% Prediction Success Rate</span></li>
+            <li style="margin-bottom: 0.75rem; display: flex; align-items: center;"><i class="fa-solid fa-check-circle"
+                style="color: var(--success); margin-right: 0.75rem; font-size: 1.125rem;"></i> <span
+                style="font-weight: 500;">End-to-End Expert Counselling</span></li>
+          </ul>
+        </div>
+        <div class="about-image reveal reveal-delay-1">
+          <img src="images/hero-illustration.png" alt="About NEET Navigator">
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid" style="margin-bottom: 4rem;">
+        <div class="stat-card reveal">
+          <h3>500+</h3>
+          <p>Medical Colleges Tracked</p>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <h3>50,000+</h3>
+          <p>Students Guided</p>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <h3>98%</h3>
+          <p>Prediction Accuracy</p>
+        </div>
+      </div>
+
+      <div class="mission-vision-grid" style="margin-bottom: 4rem;">
+        <div class="mission-card reveal"
+          style="background: var(--off-white); padding: 2.5rem; border-radius: var(--radius-lg); border-top: 4px solid var(--primary-blue);">
+          <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1.5rem;"><i
+              class="fa-solid fa-rocket"></i></div>
+          <h3 style="margin-bottom: 1rem; font-size: var(--text-2xl);">Our Mission</h3>
+          <p style="color: var(--gray-600); line-height: 1.6;">To democratize access to accurate medical counselling
+            information and ensure every deserving NEET aspirant secures the best possible college based on their rank.
+            We aim to replace anxiety with clarity.</p>
+        </div>
+        <div class="vision-card reveal reveal-delay-1"
+          style="background: var(--off-white); padding: 2.5rem; border-radius: var(--radius-lg); border-top: 4px solid var(--primary-orange);">
+          <div style="font-size: 2.5rem; color: var(--primary-orange); margin-bottom: 1.5rem;"><i
+              class="fa-solid fa-eye"></i></div>
+          <h3 style="margin-bottom: 1rem; font-size: var(--text-2xl);">Our Vision</h3>
+          <p style="color: var(--gray-600); line-height: 1.6;">To be the definitive guiding light for healthcare
+            education in India, creating a future where the college selection process is a seamless, stress-free
+            milestone in every future doctor's journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding"
+    style="background: var(--gradient-blue); color: var(--white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--white); font-size: var(--text-4xl); margin-bottom: 1rem;">Ready to Secure Your Medical
+        Seat?</h2>
+      <p style="font-size: var(--text-lg); margin-bottom: 2rem; opacity: 0.9;">Join thousands of successful students who
+        found their dream college with us.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="predictor.html" class="btn btn-secondary btn-lg"
+          style="color: var(--primary-blue); border-color: var(--white);">Try College Predictor</a>
+        <a href="contact.html" class="btn btn-primary btn-lg"
+          style="background: var(--white); color: var(--gray-800);">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" style="padding: 4rem 0 2rem; background: var(--gray-800); color: var(--white);">
+    <div class="container">
+      <div class="footer-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+        <div class="footer-brand">
+          <span class="logo-text" style="color: var(--white); font-size: 1.5rem;">Ark <span
+              style="color: var(--primary-orange);">Professor</span></span>
+          <p style="margin-top: 1rem; color: var(--gray-300); font-size: 0.875rem;">Your trusted companion for NEET UG
+            counselling, college prediction, and medical admission guidance.</p>
+        </div>
+        <div class="footer-column">
+          <h4 style="color: var(--white); margin-bottom: 1.5rem;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: var(--gray-300);">Home</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="courses.html" style="color: var(--gray-300);">Courses</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="colleges.html" style="color: var(--gray-300);">Colleges</a></li>
+            <li><a href="contact.html" style="color: var(--gray-300);">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"
+        style="text-align: center; border-top: 1px solid var(--gray-700); padding-top: 2rem; color: var(--gray-400); font-size: 0.875rem;">
+        <p>&copy; 2026 Ark Professor. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"
+    style="position: fixed; bottom: 20px; right: 20px; background: var(--primary-orange); color: var(--white); width: 40px; height: 40px; border-radius: 50%; opacity: 0; visibility: hidden; transition: all 0.3s;">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
