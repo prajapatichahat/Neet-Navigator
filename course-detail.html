@@ -19,20 +19,32 @@
 
 <body>
   <!-- HEADER -->
+  <!-- Auto Scroll News Ticker -->
+  <div class="news-ticker">
+    <div class="ticker-content">
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> NEET UG 2026 Registration starting soon! Register now on
+        official website.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> Check your predicted medical college with 98%
+        accuracy.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> Gujarat state quota counselling schedule released.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> New Medical Colleges added in UP and Maharashtra for 2026
+        session.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> AIIMS Delhi cut-off expected to rise this year.</span>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="container"><a href="index.html" class="logo"><img src="images/logo.png" alt="NEET Navigator Logo"><span
           class="logo-text">Ark <span>Professor</span></span></a> <!-- Navigation Menu -->
       <nav class="nav-menu" id="navMenu">
-        <!-- <a href="index.html" class="active">Home</a> -->
-        <a href="courses.html" class="active">Courses</a>
+        <a href="about-us.html">About Us</a>
+        <a href="courses.html">Courses</a>
         <a href="colleges.html">Colleges</a>
-        <!-- <a href="predictor.html">Predictor</a> -->
-        <!-- <a href="seat-matrix.html">Seat Matrix</a> -->
         <a href="videos.html">Videos</a>
-        <a href="counselling.html">Counselling</a>
-        <a href="govt-scheme.html">Government Schemes</a>
-        <a href="fees-structure.html">Fees Structure</a>
-        <!-- <a href="contact.html">Contact</a> -->
+        <a href="counselling.html">Counselling Process</a>
+        <a href="pricing.html">Subscription</a>
+        <a href="fees-structure.html">Fees</a>
+        <a href="govt-scheme.html">Gov. Sche.</a>
       </nav>
       <div class="nav-actions"><a href="login.html" class="btn-login">Log In</a><a href="register.html"
           class="btn-register">Register Free</a></div><button class="menu-toggle" id="menuToggle"
@@ -174,59 +186,191 @@
       <div style="margin-top: var(--space-12);">
         <h3 style="margin-bottom: var(--space-6); text-align: start;"><i class="fa-solid fa-building-columns"></i> Top
           MBBS Colleges</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+        <!-- Search & Filter Toolbar -->
+        <div class="colleges-toolbar reveal">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="collegeSearchInput" placeholder="Search colleges by name or location..."
+              aria-label="Search colleges">
+          </div>
 
-          <div class="college-card reveal">
-            <div class="college-card-image"><img src="images/college-campus.png" alt="AIIMS New Delhi"><span
-                class="college-badge"><i class="fa-solid fa-star"></i> #1 Ranked</span></div>
+          <div class="filter-pills">
+            <button class="filter-pill active" id="filterAll">All</button>
+            <button class="filter-pill" id="filterGovernment">Government</button>
+            <button class="filter-pill" id="filterPrivate">Private</button>
+            <button class="filter-pill" id="filterDeemed">Deemed</button>
+          </div>
+        </div>
+
+        <!-- College Cards Grid -->
+        <div class="colleges-grid">
+          <!-- College 1 -->
+          <div class="college-card reveal reveal-delay-1">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="AIIMS New Delhi Campus">
+              <span class="college-badge"><i class="fa-solid fa-star"></i> Top Ranked</span>
+            </div>
             <div class="college-card-body">
               <h3>AIIMS New Delhi</h3>
               <div class="college-meta">
-                <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> New Delhi, India</div>
-                <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
-                    class="fee">₹1,628/year</span></div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  New Delhi, India
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹1,628/year</span>
+                </div>
               </div>
             </div>
             <div class="college-card-footer">
-              <div class="college-rating"><i class="fa-solid fa-star"></i> 4.9</div>
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </div>
               <a href="college-detail.html" class="btn btn-primary btn-sm">View Details</a>
             </div>
           </div>
 
-          <div class="college-card reveal reveal-delay-1">
-            <div class="college-card-image"><img src="images/college-campus.png" alt="JIPMER Puducherry"><span
-                class="college-badge"><i class="fa-solid fa-star"></i> #2 Ranked</span></div>
+          <!-- College 2 -->
+          <div class="college-card reveal reveal-delay-2">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="JIPMER Puducherry Campus">
+              <span class="college-badge">Government</span>
+            </div>
             <div class="college-card-body">
               <h3>JIPMER Puducherry</h3>
               <div class="college-meta">
-                <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Puducherry, India</div>
-                <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
-                    class="fee">₹2,440/year</span></div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Puducherry, India
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹2,440/year</span>
+                </div>
               </div>
             </div>
             <div class="college-card-footer">
-              <div class="college-rating"><i class="fa-solid fa-star"></i> 4.8</div>
-              <a href="college-detail.html" class="btn btn-primary btn-sm">View Details</a>
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </div>
+              <a href="#" class="btn btn-primary btn-sm">View Details</a>
             </div>
           </div>
 
-          <div class="college-card reveal reveal-delay-2">
-            <div class="college-card-image"><img src="images/college-campus.png" alt="CMC Vellore"><span
-                class="college-badge"><i class="fa-solid fa-star"></i> #3 Ranked</span></div>
+          <!-- College 3 -->
+          <div class="college-card reveal reveal-delay-3">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="CMC Vellore Campus">
+              <span class="college-badge">Private</span>
+            </div>
             <div class="college-card-body">
               <h3>CMC Vellore</h3>
               <div class="college-meta">
-                <div class="college-meta-item"><i class="fa-solid fa-location-dot"></i> Vellore, Tamil Nadu</div>
-                <div class="college-meta-item"><i class="fa-solid fa-indian-rupee-sign"></i> Fees: <span
-                    class="fee">₹25,000/year</span></div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Vellore, Tamil Nadu
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹25,000/year</span>
+                </div>
               </div>
             </div>
             <div class="college-card-footer">
-              <div class="college-rating"><i class="fa-solid fa-star"></i> 4.7</div>
-              <a href="college-detail.html" class="btn btn-primary btn-sm">View Details</a>
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </div>
+              <a href="#" class="btn btn-primary btn-sm">View Details</a>
             </div>
           </div>
 
+          <!-- College 4 -->
+          <div class="college-card reveal reveal-delay-1">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="KMC Manipal Campus">
+              <span class="college-badge">Deemed</span>
+            </div>
+            <div class="college-card-body">
+              <h3>KMC Manipal</h3>
+              <div class="college-meta">
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Manipal, Karnataka
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹14,75,000/year</span>
+                </div>
+              </div>
+            </div>
+            <div class="college-card-footer">
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </div>
+              <a href="#" class="btn btn-primary btn-sm">View Details</a>
+            </div>
+          </div>
+
+          <!-- College 5 -->
+          <div class="college-card reveal reveal-delay-2">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="Maulana Azad Medical College Campus">
+              <span class="college-badge">Government</span>
+            </div>
+            <div class="college-card-body">
+              <h3>Maulana Azad Medical College</h3>
+              <div class="college-meta">
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  New Delhi, India
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹3,200/year</span>
+                </div>
+              </div>
+            </div>
+            <div class="college-card-footer">
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </div>
+              <a href="#" class="btn btn-primary btn-sm">View Details</a>
+            </div>
+          </div>
+
+          <!-- College 6 -->
+          <div class="college-card reveal reveal-delay-3">
+            <div class="college-card-image">
+              <img src="images/college-campus.png" alt="BHU Varanasi Campus">
+              <span class="college-badge">Government</span>
+            </div>
+            <div class="college-card-body">
+              <h3>IMS BHU Varanasi</h3>
+              <div class="college-meta">
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Varanasi, Uttar Pradesh
+                </div>
+                <div class="college-meta-item">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  Fees: <span class="fee">₹5,960/year</span>
+                </div>
+              </div>
+            </div>
+            <div class="college-card-footer">
+              <div class="college-rating">
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </div>
+              <a href="#" class="btn btn-primary btn-sm">View Details</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

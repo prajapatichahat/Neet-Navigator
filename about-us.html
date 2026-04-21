@@ -83,6 +83,20 @@
 </head>
 
 <body>
+  <!-- Auto Scroll News Ticker -->
+  <div class="news-ticker">
+    <div class="ticker-content">
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> NEET UG 2026 Registration starting soon! Register now on
+        official website.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> Check your predicted medical college with 98%
+        accuracy.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> Gujarat state quota counselling schedule released.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> New Medical Colleges added in UP and Maharashtra for 2026
+        session.</span>
+      <span class="news-item"><i class="fa-solid fa-bolt"></i> AIIMS Delhi cut-off expected to rise this year.</span>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="container">
       <a href="index.html" class="logo">
@@ -90,13 +104,14 @@
         <span class="logo-text">Ark <span>Professor</span></span>
       </a>
       <nav class="nav-menu" id="navMenu">
+        <a href="about-us.html" class="active">About Us</a>
         <a href="courses.html">Courses</a>
         <a href="colleges.html">Colleges</a>
         <a href="videos.html">Videos</a>
-        <a href="counselling.html">Counselling</a>
-        <a href="govt-scheme.html">Government Schemes</a>
-        <a href="fees-structure.html">Fees Structure</a>
-        <a href="about-us.html" class="active">About Us</a>
+        <a href="counselling.html">Counselling Process</a>
+        <a href="pricing.html">Subscription</a>
+        <a href="fees-structure.html">Fees</a>
+        <a href="govt-scheme.html">Gov. Sche.</a>
       </nav>
       <div class="nav-actions">
         <a href="login.html" class="btn-login">Log In</a>
@@ -200,46 +215,228 @@
     </div>
   </section>
 
-  <section class="cta-section section-padding"
-    style="background: var(--gradient-blue); color: var(--white); text-align: center;">
+  <!-- ========================================
+       KEY FEATURES SECTION
+       ======================================== -->
+  <section class="features" id="features">
     <div class="container">
-      <h2 style="color: var(--white); font-size: var(--text-4xl); margin-bottom: 1rem;">Ready to Secure Your Medical
-        Seat?</h2>
-      <p style="font-size: var(--text-lg); margin-bottom: 2rem; opacity: 0.9;">Join thousands of successful students who
-        found their dream college with us.</p>
-      <div style="display: flex; gap: 1rem; justify-content: center;">
-        <a href="predictor.html" class="btn btn-secondary btn-lg"
-          style="color: var(--primary-blue); border-color: var(--white);">Try College Predictor</a>
-        <a href="contact.html" class="btn btn-primary btn-lg"
-          style="background: var(--white); color: var(--gray-800);">Contact Us Today</a>
+      <div style="text-align: center;">
+        <span class="section-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Why Choose Us</span>
+      </div>
+      <h2 class="section-title reveal">Everything You Need for <span class="highlight-orange">NEET Success</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Comprehensive tools and resources to help you navigate your
+        medical admission journey with confidence.</p>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon orange"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>College Predictor</h3>
+          <p>AI-powered rank-based predictions for accurate college matching across all categories.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon blue"><i class="fa-solid fa-building-columns"></i></div>
+          <h3>College Listings</h3>
+          <p>Browse 500+ medical colleges with fees, cutoffs, rankings and detailed information.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon green"><i class="fa-solid fa-chart-bar"></i></div>
+          <h3>Seat Matrix Data</h3>
+          <p>Complete seat matrix for all counselling rounds with real-time vacancy updates.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon purple"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h3>Counselling Guidance</h3>
+          <p>Step-by-step counselling process guide for MCC, state & deemed universities.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon teal"><i class="fa-solid fa-clapperboard"></i></div>
+          <h3>Video Learning</h3>
+          <p>Expert video tutorials on counselling strategy, college reviews & career guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIALS SECTION
+       ======================================== -->
+  <section class="testimonials section-padding" id="testimonials">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-badge"><i class="fa-solid fa-comments"></i> Student Stories</span>
+      </div>
+      <h2 class="section-title reveal">What Our Students <span class="highlight-orange">Say</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Hear from students who used NEET Navigator to find their perfect
+        medical college.</p>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "NEET Navigator predicted my college with pinpoint accuracy! I got into AIIMS Jodhpur just as the tool
+            suggested. The counselling guidance was invaluable during the stressful admission process."
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-1.png" alt="Priya Sharma">
+            <div class="testimonial-author-info">
+              <h4>Priya Sharma</h4>
+              <p>MBBS, AIIMS Jodhpur</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The seat matrix data and video tutorials were a lifesaver! I was confused about choice filling but the
+            step-by-step guides made everything crystal clear. Highly recommended!"
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-2.png" alt="Rohit Patel">
+            <div class="testimonial-author-info">
+              <h4>Rohit Patel</h4>
+              <p>MBBS, GMC Mumbai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "As someone from a small town, I had no idea about the counselling process. NEET Navigator simplified
+            everything. The predictor tool helped me set realistic expectations for my rank."
+          </p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-3.png" alt="Ananya Singh">
+            <div class="testimonial-author-info">
+              <h4>Ananya Singh</h4>
+              <p>BDS, KGMC Lucknow</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREDICTOR CTA -->
+  <section class="predictor-cta" style="padding: var(--space-16) 0;">
+    <div class="container">
+      <div class="predictor-cta-content reveal">
+        <h2>Ready to Secure Your Medical
+          Seat?</h2>
+        <p>Join thousands of successful students who
+          found their dream college with us.</p>
+        <a href="predictor.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-bullseye"></i> Try College
+          Predictor</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer" id="footer" style="padding: 4rem 0 2rem; background: var(--gray-800); color: var(--white);">
+  <footer class="footer" id="footer">
     <div class="container">
-      <div class="footer-grid"
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+      <div class="footer-grid">
+        <!-- Brand -->
         <div class="footer-brand">
-          <span class="logo-text" style="color: var(--white); font-size: 1.5rem;">Ark <span
-              style="color: var(--primary-orange);">Professor</span></span>
-          <p style="margin-top: 1rem; color: var(--gray-300); font-size: 0.875rem;">Your trusted companion for NEET UG
-            counselling, college prediction, and medical admission guidance.</p>
+          <span class="logo-text">Ark <span>Professor</span></span>
+          <p>Your trusted companion for NEET UG counselling, college prediction, and medical admission guidance.
+            Empowering students to find their dream medical college.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" aria-label="Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Quick Links -->
         <div class="footer-column">
-          <h4 style="color: var(--white); margin-bottom: 1.5rem;">Quick Links</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;"><a href="index.html" style="color: var(--gray-300);">Home</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="courses.html" style="color: var(--gray-300);">Courses</a></li>
-            <li style="margin-bottom: 0.5rem;"><a href="colleges.html" style="color: var(--gray-300);">Colleges</a></li>
-            <li><a href="contact.html" style="color: var(--gray-300);">Contact</a></li>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html" class="active"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="courses.html"><i class="fa-solid fa-chevron-right"></i> Courses</a></li>
+            <li><a href="colleges.html"><i class="fa-solid fa-chevron-right"></i> Colleges</a></li>
+            <li><a href="predictor.html"><i class="fa-solid fa-chevron-right"></i> Predictor</a></li>
+            <li><a href="videos.html"><i class="fa-solid fa-chevron-right"></i> Videos</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="seat-matrix.html"><i class="fa-solid fa-chevron-right"></i> Seat Matrix</a></li>
+            <li><a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling Guide</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Career Guidance</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="mailto:info@ark.professor.com"><i class="fa-solid fa-envelope"></i> info@ark.professor.com</a>
+            </li>
+            <li><a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 88499 88338</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Address</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom"
-        style="text-align: center; border-top: 1px solid var(--gray-700); padding-top: 2rem; color: var(--gray-400); font-size: 0.875rem;">
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
         <p>&copy; 2026 Ark Professor. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>

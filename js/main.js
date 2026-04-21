@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================== */
 function initStickyHeader() {
   const header = document.querySelector('.header');
+  const ticker = document.querySelector('.news-ticker');
   if (!header) return;
 
   let lastScroll = 0;
@@ -30,8 +31,10 @@ function initStickyHeader() {
     // Add/remove scrolled class
     if (currentScroll > 50) {
       header.classList.add('scrolled');
+      if(ticker) ticker.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+      if(ticker) ticker.classList.remove('scrolled');
     }
 
     lastScroll = currentScroll;
