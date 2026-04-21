@@ -133,6 +133,29 @@ img {
   display: block;
 }
 
+.fee-caution {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+}
+
+.fee-caution i {
+  color: #d97706;
+  font-size: 24px;
+}
+
+.fee-caution p {
+  font-size: var(--text-sm);
+  color: #92400e;
+  line-height: 1.6;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -3427,6 +3450,7 @@ select.form-control {
 .header.scrolled {
   top: 0 !important;
 }
+
 .video-badges-wrap {
   position: absolute;
   top: var(--space-3);
@@ -3466,8 +3490,18 @@ select.form-control {
 }
 
 @keyframes blink-highlight {
-  0% { opacity: 1; box-shadow: 0 0 10px rgba(239, 68, 68, 0.8); }
-  50% { opacity: 0.5; box-shadow: 0 0 2px rgba(239, 68, 68, 0.2); }
-  100% { opacity: 1; box-shadow: 0 0 10px rgba(239, 68, 68, 0.8); }
-}
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  }
 
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 2px rgba(239, 68, 68, 0.2);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  }
+}
