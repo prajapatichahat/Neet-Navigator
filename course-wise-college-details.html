@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="NEET UG Seat Matrix — Complete category-wise seat distribution for medical colleges across All India Quota, State Quota, and Deemed Universities." />
-  <title>Seat Matrix — NEET UG Category-wise Seats | NEET Navigator</title>
+  <title>Course Wise College Details — NEET UG Category-wise Seats | NEET Navigator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -57,8 +57,8 @@
   <section class="page-banner">
     <div class="container">
       <div class="page-banner-content">
-        <span class="section-badge"><i class="fa-solid fa-chart-bar"></i> Seat Matrix</span>
-        <h1>NEET UG <span class="highlight-orange">Seat Matrix</span></h1>
+        <span class="section-badge"><i class="fa-solid fa-chart-bar"></i> Course Wise College Details</span>
+        <h1>Course<span class="highlight-orange"> Wise </span>College Details</h1>
         <p>
           Category-wise seat distribution for medical colleges across India.
         </p>
@@ -110,142 +110,164 @@
       </div>
 
       <!-- Data Table -->
+      <style>
+        .resource-links {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+        .resource-link {
+          text-decoration: none;
+          color: var(--primary-blue);
+          font-size: 0.8rem;
+          font-weight: 600;
+          background: #f0f9ff;
+          padding: 6px 10px;
+          border-radius: 6px;
+          transition: all 0.2s;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          border: 1px solid #bae6fd;
+        }
+        .resource-link:hover {
+          background: var(--primary-blue);
+          color: white;
+          border-color: var(--primary-blue);
+        }
+        .btn-outline-primary {
+          display: inline-block;
+          padding: 8px 16px;
+          border: 2px solid var(--primary-blue);
+          color: var(--primary-blue);
+          border-radius: 20px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: 0.3s;
+          font-size: 0.85rem;
+          white-space: nowrap;
+        }
+        .btn-outline-primary:hover {
+          background: var(--primary-blue);
+          color: white;
+        }
+        .code-cell {
+          font-family: monospace;
+          font-weight: bold;
+          color: var(--gray-600);
+          background: #f3f4f6;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
+      </style>
       <div class="data-table-wrapper reveal">
         <table class="data-table">
           <thead>
             <tr>
+              <th>Code</th>
               <th>College Name</th>
-              <th>State</th>
-              <th>Course</th>
+              <th>City</th>
               <th>Type</th>
-              <th>General</th>
-              <th>OBC</th>
-              <th>SC</th>
-              <th>ST</th>
-              <th>EWS</th>
-              <th>Total</th>
+              <th>Resource Links</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>AIIMS New Delhi</strong></td>
-              <td>Delhi</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>50</td>
-              <td>27</td>
-              <td>15</td>
-              <td>7</td>
-              <td>10</td>
-              <td><strong>107</strong></td>
-            </tr>
-            <tr>
-              <td><strong>JIPMER Puducherry</strong></td>
-              <td>Puducherry</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>75</td>
-              <td>40</td>
-              <td>22</td>
-              <td>11</td>
-              <td>15</td>
-              <td><strong>150</strong></td>
-            </tr>
-            <tr>
-              <td><strong>MAMC New Delhi</strong></td>
-              <td>Delhi</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>125</td>
-              <td>67</td>
-              <td>37</td>
-              <td>18</td>
-              <td>25</td>
-              <td><strong>250</strong></td>
-            </tr>
-            <tr>
-              <td><strong>CMC Vellore</strong></td>
-              <td>Tamil Nadu</td>
-              <td>MBBS</td>
-              <td><span class="table-badge private">Private</span></td>
-              <td>50</td>
-              <td>27</td>
-              <td>15</td>
-              <td>7</td>
-              <td>10</td>
-              <td><strong>100</strong></td>
-            </tr>
-            <tr>
-              <td><strong>KMC Manipal</strong></td>
-              <td>Karnataka</td>
-              <td>MBBS</td>
-              <td><span class="table-badge deemed">Deemed</span></td>
-              <td>125</td>
-              <td>67</td>
-              <td>37</td>
-              <td>18</td>
-              <td>25</td>
-              <td><strong>250</strong></td>
-            </tr>
-            <tr>
-              <td><strong>AIIMS Jodhpur</strong></td>
-              <td>Rajasthan</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>60</td>
-              <td>32</td>
-              <td>18</td>
-              <td>9</td>
-              <td>12</td>
-              <td><strong>125</strong></td>
-            </tr>
-            <tr>
-              <td><strong>IMS BHU Varanasi</strong></td>
-              <td>Uttar Pradesh</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>45</td>
-              <td>24</td>
-              <td>13</td>
-              <td>7</td>
-              <td>9</td>
-              <td><strong>92</strong></td>
-            </tr>
-            <tr>
-              <td><strong>GMC Mumbai</strong></td>
-              <td>Maharashtra</td>
-              <td>MBBS</td>
-              <td><span class="table-badge govt">Govt</span></td>
-              <td>100</td>
-              <td>54</td>
-              <td>30</td>
-              <td>15</td>
-              <td>20</td>
-              <td><strong>200</strong></td>
-            </tr>
-            <tr>
+              <td><span class="code-cell">GJ-01</span></td>
               <td><strong>B.J. Medical College</strong></td>
-              <td>Gujarat</td>
-              <td>MBBS</td>
+              <td>Ahmedabad</td>
               <td><span class="table-badge govt">Govt</span></td>
-              <td>125</td>
-              <td>67</td>
-              <td>37</td>
-              <td>18</td>
-              <td>25</td>
-              <td><strong>250</strong></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
             </tr>
             <tr>
-              <td><strong>Kasturba Medical</strong></td>
-              <td>Karnataka</td>
-              <td>MBBS</td>
+              <td><span class="code-cell">GJ-02</span></td>
+              <td><strong>Government Medical College</strong></td>
+              <td>Surat</td>
+              <td><span class="table-badge govt">Govt</span></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="code-cell">GJ-03</span></td>
+              <td><strong>GMERS Medical College</strong></td>
+              <td>Sola, Ahmedabad</td>
+              <td><span class="table-badge govt">GMERS</span></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="code-cell">GJ-04</span></td>
+              <td><strong>Pramukhswami Medical College</strong></td>
+              <td>Karamsad</td>
               <td><span class="table-badge private">Private</span></td>
-              <td>100</td>
-              <td>54</td>
-              <td>30</td>
-              <td>15</td>
-              <td>20</td>
-              <td><strong>200</strong></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="code-cell">GJ-05</span></td>
+              <td><strong>Smt. NHL Municipal Medical College</strong></td>
+              <td>Ahmedabad</td>
+              <td><span class="table-badge deemed">Trust</span></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="code-cell">GJ-06</span></td>
+              <td><strong>GMERS Medical College</strong></td>
+              <td>Gandhinagar</td>
+              <td><span class="table-badge govt">GMERS</span></td>
+              <td>
+                <div class="resource-links">
+                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
+                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
+                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                </div>
+              </td>
+              <td>
+                <a href="college-detail.html" class="btn-outline-primary">View Details</a>
+              </td>
             </tr>
           </tbody>
         </table>

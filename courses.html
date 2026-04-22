@@ -20,8 +20,8 @@
 <body>
 
   <!-- HEADER -->
-    <!-- Auto Scroll News Ticker -->
-  <div class="news-ticker">
+  <!-- Auto Scroll News Ticker -->
+  <!-- <div class="news-ticker">
     <div class="ticker-content">
       <span class="news-item"><i class="fa-solid fa-bolt"></i> NEET UG 2026 Registration starting soon! Register now on official website.</span>
       <span class="news-item"><i class="fa-solid fa-bolt"></i> Check your predicted medical college with 98% accuracy.</span>
@@ -29,13 +29,13 @@
       <span class="news-item"><i class="fa-solid fa-bolt"></i> New Medical Colleges added in UP and Maharashtra for 2026 session.</span>
       <span class="news-item"><i class="fa-solid fa-bolt"></i> AIIMS Delhi cut-off expected to rise this year.</span>
     </div>
-  </div>
+  </div> -->
 
-<header class="header" id="header">
+  <header class="header" id="header">
     <div class="container">
       <a href="index.html" class="logo"><img src="images/logo.png" alt="NEET Navigator Logo"><span class="logo-text">Ark
           <span>Professor</span></span></a>
-            <!-- Navigation Menu -->
+      <!-- Navigation Menu -->
       <nav class="nav-menu" id="navMenu">
         <a href="about-us.html">About Us</a>
         <a href="courses.html" class="active">Courses</a>
@@ -95,9 +95,22 @@
             </p>
             <div class="info-list" style="margin-bottom: var(--space-5);">
               <div class="info-list-item"><span class="label">Duration</span><span class="value">5.5 Years</span></div>
-              <div class="info-list-item"><span class="label">Eligibility</span><span class="value">10+2 with PCB</span>
+              <div class="info-list-item" onclick="openCourseModal('eligibility')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Eligibility <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value">10+2 with
+                  PCB</span></div>
+              <div class="info-list-item" onclick="openCourseModal('documents')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Documents <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value"
+                  style="color:var(--primary-blue);">View List</span></div>
+              <div class="info-list-item"><span class="label">Admission Process</span><a
+                  href="admission-process.html"><span class="value" style="color:var(--primary-blue);">Steps</span></a>
               </div>
-              <div class="info-list-item"><span class="label">Seats (India)</span><span class="value">1,08,940+</span>
+              <div class="info-list-item"><span class="label">Seats (Gujarat)</span><span class="value">1,08,940+</span>
               </div>
             </div>
             <a href="course-detail.html?course=mbbs" class="btn btn-blue btn-sm" style="width:100%;">View Full Details
@@ -113,13 +126,26 @@
           <div class="course-card-body">
             <span class="course-tag">Dental</span>
             <h3>BDS</h3>
-            <p>Bachelor of Dental Surgery — Specialize in dental science and oral healthcare with a promising career.
+            <p>Bachelor of Dental dental science and oral healthcare with a promising career.
             </p>
             <div class="info-list" style="margin-bottom: var(--space-5);">
               <div class="info-list-item"><span class="label">Duration</span><span class="value">5 Years</span></div>
-              <div class="info-list-item"><span class="label">Eligibility</span><span class="value">10+2 with PCB</span>
+              <div class="info-list-item" onclick="openCourseModal('eligibility')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Eligibility <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value">10+2 with
+                  PCB</span></div>
+              <div class="info-list-item" onclick="openCourseModal('documents')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Documents <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value"
+                  style="color:var(--primary-blue);">View List</span></div>
+              <div class="info-list-item"><span class="label">Admission Process</span><a
+                  href="admission-process.html"><span class="value" style="color:var(--primary-blue);">Steps</span></a>
               </div>
-              <div class="info-list-item"><span class="label">Seats (India)</span><span class="value">27,868+</span>
+              <div class="info-list-item"><span class="label">Seats (Gujarat)</span><span class="value">27,868+</span>
               </div>
             </div>
             <a href="course-detail.html?course=bds" class="btn btn-blue btn-sm" style="width:100%;">View Full Details <i
@@ -135,13 +161,26 @@
           <div class="course-card-body">
             <span class="course-tag">Ayurveda</span>
             <h3>BAMS</h3>
-            <p>Bachelor of Ayurveda, Medicine & Surgery — Blend ancient Ayurvedic wisdom with modern medical practices.
+            <p>Bachelor of Ayurveda, Medicine & ancient Ayurvedic wisdom with modern medical practices.
             </p>
             <div class="info-list" style="margin-bottom: var(--space-5);">
               <div class="info-list-item"><span class="label">Duration</span><span class="value">5.5 Years</span></div>
-              <div class="info-list-item"><span class="label">Eligibility</span><span class="value">10+2 with PCB</span>
+              <div class="info-list-item" onclick="openCourseModal('eligibility')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Eligibility <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value">10+2 with
+                  PCB</span></div>
+              <div class="info-list-item" onclick="openCourseModal('documents')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Documents <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value"
+                  style="color:var(--primary-blue);">View List</span></div>
+              <div class="info-list-item"><span class="label">Admission Process</span><a
+                  href="admission-process.html"><span class="value" style="color:var(--primary-blue);">Steps</span></a>
               </div>
-              <div class="info-list-item"><span class="label">Seats (India)</span><span class="value">52,720+</span>
+              <div class="info-list-item"><span class="label">Seats (Gujarat)</span><span class="value">52,720+</span>
               </div>
             </div>
             <a href="course-detail.html?course=bams" class="btn btn-blue btn-sm" style="width:100%;">View Full Details
@@ -160,9 +199,22 @@
             <p>Bachelor of Homeopathic Medicine & Surgery — Practice holistic healing with homeopathic science.</p>
             <div class="info-list" style="margin-bottom: var(--space-5);">
               <div class="info-list-item"><span class="label">Duration</span><span class="value">5.5 Years</span></div>
-              <div class="info-list-item"><span class="label">Eligibility</span><span class="value">10+2 with PCB</span>
+              <div class="info-list-item" onclick="openCourseModal('eligibility')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Eligibility <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value">10+2 with
+                  PCB</span></div>
+              <div class="info-list-item" onclick="openCourseModal('documents')"
+                style="cursor:pointer;  border-radius: 4px; transition: all 0.2s;"
+                onmouseover="this.style.background='#f0f9ff'" onmouseout="this.style.background='transparent'"><span
+                  class="label">Documents <i class="fa-solid fa-circle-info"
+                    style="color:var(--primary-blue); font-size:0.8rem;"></i></span><span class="value"
+                  style="color:var(--primary-blue);">View List</span></div>
+              <div class="info-list-item"><span class="label">Admission Process</span><a
+                  href="admission-process.html"><span class="value" style="color:var(--primary-blue);">Steps</span></a>
               </div>
-              <div class="info-list-item"><span class="label">Seats (India)</span><span class="value">13,198+</span>
+              <div class="info-list-item"><span class="label">Seats (Gujarat)</span><span class="value">13,198+</span>
               </div>
             </div>
             <a href="course-detail.html?course=bhms" class="btn btn-blue btn-sm" style="width:100%;">View Full Details
@@ -237,6 +289,82 @@
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i
       class="fa-solid fa-chevron-up"></i></button>
+  <!-- Course Info Modal -->
+  <div id="courseInfoModal"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+    <div
+      style="background: white; border-radius: 12px; width: 100%; max-width: 600px; max-height: 80vh; overflow-y: auto; position: relative; animation: modalFadeIn 0.3s ease;">
+      <button onclick="closeCourseModal()"
+        style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-500);"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div id="modalBody" style="padding: 30px;">
+        <!-- Dynamic Content -->
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    function openCourseModal(type) {
+      const modal = document.getElementById('courseInfoModal');
+      const body = document.getElementById('modalBody');
+
+      let title = '';
+      let content = '';
+
+      if (type === 'eligibility') {
+        title = '<h3 style="margin-bottom: 20px; color: var(--primary-blue);"><i class="fa-solid fa-clipboard-list"></i> Eligibility Criteria</h3>';
+        content = `
+          <ul style="color: var(--gray-600); line-height: 2; list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #22C55E; margin-right: 10px;"></i> Must have passed 10+2 with Physics, Chemistry, and Biology</li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #22C55E; margin-right: 10px;"></i> Minimum 50% aggregate marks (40% for SC/ST/OBC)</li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #22C55E; margin-right: 10px;"></i> Must have qualified NEET UG examination</li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #22C55E; margin-right: 10px;"></i> Age: Minimum 17 years at the time of admission</li>
+            <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #22C55E; margin-right: 10px;"></i> Indian Nationality (NRI seats available separately)</li>
+          </ul>`;
+      } else if (type === 'documents') {
+        title = '<h3 style="margin-bottom: 20px; color: var(--primary-orange);"><i class="fa-solid fa-file-lines"></i> Required Documents</h3>';
+        content = `
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-file" style="color: var(--gray-400);"></i> NEET Score Card</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-file" style="color: var(--gray-400);"></i> 10th & 12th Mark Sheets</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-id-card" style="color: var(--gray-400);"></i> Aadhar Card</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-file" style="color: var(--gray-400);"></i> Domicile Certificate</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-file" style="color: var(--gray-400);"></i> Category Certificate</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-file" style="color: var(--gray-400);"></i> Transfer Certificate</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-image" style="color: var(--gray-400);"></i> Passport Photos</span>
+            <span style="padding: 8px 15px; background: var(--off-white); border-radius: 20px; border: 1px solid #e5e7eb; font-size: 14px;"><i class="fa-solid fa-heart-pulse" style="color: var(--gray-400);"></i> Medical Fitness</span>
+          </div>`;
+      }
+
+      body.innerHTML = title + content;
+      modal.style.display = 'flex';
+    }
+
+    function closeCourseModal() {
+      document.getElementById('courseInfoModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+      if (event.target == document.getElementById('courseInfoModal')) {
+        closeCourseModal();
+      }
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 

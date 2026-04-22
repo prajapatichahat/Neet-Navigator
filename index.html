@@ -34,7 +34,7 @@
        HEADER / NAVIGATION
        ======================================== -->
   <!-- Auto Scroll News Ticker -->
-  <div class="news-ticker">
+  <!-- <div class="news-ticker">
     <div class="ticker-content">
       <span class="news-item"><i class="fa-solid fa-bolt"></i> NEET UG 2026 Registration starting soon! Register now on
         official website.</span>
@@ -45,7 +45,7 @@
         session.</span>
       <span class="news-item"><i class="fa-solid fa-bolt"></i> AIIMS Delhi cut-off expected to rise this year.</span>
     </div>
-  </div>
+  </div> -->
 
   <header class="header" id="header">
     <div class="container">
@@ -147,8 +147,22 @@
       </div>
 
       <!-- Hero Visual -->
-      <div class="hero-visual">
-        <div class="hero-image-wrapper">
+      <div class="hero-visual" style="flex-direction: column;">
+
+        <!-- Local News Ticker -->
+        <div class="local-news-ticker"
+          style="width: 100%; max-width: 400px; overflow: hidden; background: var(--white); border-radius: var(--radius-md);border: 1px solid var(--primary-orange); padding: 15px 15px; margin-bottom: 20px; box-shadow: var(--shadow-md);">
+          <div class="ticker-content"
+            style="white-space: nowrap; animation: ticker-scroll 15s linear infinite; display: inline-block; padding-left: 100%; font-size: 18px; color: var(--primary-orange); font-weight: 500;">
+            <span style="margin-right: 30px;"><i class="fa-solid fa-bolt"
+                style="color: #FFD700; margin-right: 5px;"></i> Gujarat state quota counselling schedule
+              released!</span>
+            <span style="margin-right: 30px;"><i class="fa-solid fa-bolt"
+                style="color: #FFD700; margin-right: 5px;"></i> NEET UG 2026 Registration starting soon.</span>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper" style="max-width: 400px;">
           <img src="images/hero-illustration.png" alt="Medical student illustration - NEET Navigator">
 
           <!-- Floating Cards -->

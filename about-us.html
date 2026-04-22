@@ -78,13 +78,121 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
       }
+
+      .review-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .slider-wrapper {
+        height: 350px !important;
+      }
+    }
+
+    /* Video Review Slider Animations */
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(-50%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .slide-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .slide-col.up-1 {
+      animation: scrollUp 25s linear infinite;
+    }
+
+    .slide-col.up-2 {
+      animation: scrollUp 30s linear infinite;
+    }
+
+    .slide-col.down {
+      animation: scrollDown 28s linear infinite;
+    }
+
+    .slide-col:hover {
+      animation-play-state: paused;
+    }
+
+    .video-review-card {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video-review-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-review-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-review-card .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .video-review-card:hover .play-overlay {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .video-review-card .play-btn-circle {
+      width: 45px;
+      height: 45px;
+      background: rgba(244, 123, 32, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      padding-left: 3px;
+      box-shadow: 0 4px 10px rgba(244, 123, 32, 0.4);
     }
   </style>
 </head>
 
 <body>
   <!-- Auto Scroll News Ticker -->
-  <div class="news-ticker">
+  <!-- <div class="news-ticker">
     <div class="ticker-content">
       <span class="news-item"><i class="fa-solid fa-bolt"></i> NEET UG 2026 Registration starting soon! Register now on
         official website.</span>
@@ -95,7 +203,7 @@
         session.</span>
       <span class="news-item"><i class="fa-solid fa-bolt"></i> AIIMS Delhi cut-off expected to rise this year.</span>
     </div>
-  </div>
+  </div> -->
 
   <header class="header" id="header">
     <div class="container">
@@ -347,6 +455,152 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       VIDEO REVIEWS SECTION
+       ======================================== -->
+  <section class="video-reviews section-padding" style="background: var(--white); overflow: hidden;">
+    <div class="container">
+      <div class="review-grid" style="display: grid; gap: 4rem; align-items: center;">
+        <div class="review-content reveal">
+          <span class="section-badge"><i class="fa-solid fa-video"></i> Video Reviews</span>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Real Stories From <span
+              class="highlight-orange">Real Students</span></h2>
+          <p style="color: var(--gray-600); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.7;">Watch how our
+            transparent data and expert counselling helped thousands find their perfect medical college. Don't just take
+            our word for it—listen to the students whose lives were transformed.</p>
+
+          <div class="review-stats-card"
+            style="display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem; background: var(--off-white); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-orange);">
+            <div style="font-size: 3rem; font-weight: 800; color: var(--primary-orange); line-height: 1;">15K+</div>
+            <div style="color: var(--gray-700); font-weight: 600; line-height: 1.4; font-size: 1.1rem;">Verified Student
+              <br>Video Reviews
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Side: 3 Column Vertical Sliders -->
+        <div class="slider-wrapper"
+          style="display: flex; gap: 1rem; height: 500px; overflow: hidden; position: relative; border-radius: var(--radius-xl);">
+          <!-- Gradient Overlays for smooth effect -->
+          <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 80px;  z-index: 2; pointer-events: none;">
+          </div>
+          <div
+            style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80px;  z-index: 2; pointer-events: none;">
+          </div>
+
+          <!-- Column 1 (Scroll Up) -->
+          <div class="slide-col up-1">
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 1">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 2">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 3">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <!-- Duplicates for infinite scroll -->
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 1">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 2">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 3">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2 (Scroll Down) -->
+          <div class="slide-col down">
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 4">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 5">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 6">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <!-- Duplicates for infinite scroll -->
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 4">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 5">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 6">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3 (Scroll Up) -->
+          <div class="slide-col up-2">
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 7">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 8">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 9">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <!-- Duplicates for infinite scroll -->
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 7">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 8">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+            <div class="video-review-card"><img src="images/video-thumbnail.png" alt="Review 9">
+              <div class="play-overlay">
+                <div class="play-btn-circle"><i class="fa-solid fa-play"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content -->
+
       </div>
     </div>
   </section>
