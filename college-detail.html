@@ -39,12 +39,18 @@
       <nav class="nav-menu" id="navMenu">
         <a href="about-us.html">About Us</a>
         <a href="courses.html">Courses</a>
-        <a href="colleges.html">Colleges</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Colleges <i class="fa-solid fa-chevron-down"
+              style="font-size: 0.75rem;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="colleges.html">Colleges info</a>
+            <a href="govt-scheme.html">Gov. Sche. info</a>
+            <a href="fees-structure.html">Fees info</a>
+          </div>
+        </div>
         <a href="videos.html">Videos</a>
         <a href="counselling.html">Counselling Process</a>
         <a href="pricing.html">Subscription</a>
-        <a href="fees-structure.html">Fees</a>
-        <a href="govt-scheme.html">Gov. Sche.</a>
       </nav>
       <div class="nav-actions"><a href="login.html" class="btn-login">Log In</a><a href="register.html"
           class="btn-register">Register Free</a></div><button class="menu-toggle" id="menuToggle"
@@ -67,7 +73,17 @@
       <ul class="breadcrumb-list">
         <li><a href="index.html">Home</a></li>
         <li><span class="separator">›</span></li>
-        <li><a href="colleges.html">Colleges</a></li>
+        <li>
+          <div class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle">Colleges <i class="fa-solid fa-chevron-down"
+                style="font-size: 0.75rem;"></i></a>
+            <div class="nav-dropdown-menu">
+              <a href="colleges.html">Colleges info</a>
+              <a href="govt-scheme.html">Gov. Sche. info</a>
+              <a href="fees-structure.html">Fees info</a>
+            </div>
+          </div>
+        </li>
         <li><span class="separator">›</span></li>
         <li class="current">AIIMS New Delhi</li>
       </ul>
@@ -93,7 +109,8 @@
             doctors and medical researchers.
           </p>
 
-          <h3 style="margin-bottom: var(--space-4);"><i class="fa-solid fa-indian-rupee-sign"></i> Fees Structure</h3>
+          <h3 style="margin-bottom: var(--space-4);" id="fees-structure"><i class="fa-solid fa-indian-rupee-sign"></i>
+            Fees Structure</h3>
           <div class="data-table-wrapper" style="margin-bottom: var(--space-8);">
             <table class="data-table">
               <thead>
@@ -148,7 +165,8 @@
               fees, development fees, and security deposits vary significantly from college to college.</p>
           </div>
           <br />
-          <h3 style="margin-bottom: var(--space-4);"><i class="fa-solid fa-chart-bar"></i> Seat Matrix (MBBS)</h3>
+          <h3 style="margin-bottom: var(--space-4);" id="seat-matrix"><i class="fa-solid fa-chart-bar"></i> Seat Matrix
+            (MBBS)</h3>
           <div class="data-table-wrapper">
             <table class="data-table">
               <thead>

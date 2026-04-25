@@ -39,12 +39,18 @@
       <nav class="nav-menu" id="navMenu">
         <a href="about-us.html">About Us</a>
         <a href="courses.html">Courses</a>
-        <a href="colleges.html">Colleges</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Colleges <i class="fa-solid fa-chevron-down"
+              style="font-size: 0.75rem;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="colleges.html">Colleges info</a>
+            <a href="govt-scheme.html">Gov. Sche. info</a>
+            <a href="fees-structure.html">Fees info</a>
+          </div>
+        </div>
         <a href="videos.html">Videos</a>
         <a href="counselling.html" class="active">Counselling Process</a>
         <a href="pricing.html">Subscription</a>
-        <a href="fees-structure.html">Fees</a>
-        <a href="govt-scheme.html">Gov. Sche.</a>
       </nav>
       <div class="nav-actions">
         <a href="login.html" class="btn-login">Log In</a><a href="register.html" class="btn-register">Register Free</a>
@@ -142,85 +148,293 @@
         Key dates for Gujarat NEET UG counselling process.
       </p>
 
-      <div class="timeline reveal">
-        <div class="timeline-item">
-          <div class="timeline-dot active"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">June 15, 2026</div>
-            <h4>NEET UG Results Declared</h4>
-            <p>
-              NTA releases NEET UG 2026 results and scorecards on official
-              website.
-            </p>
+      <!-- Course Tabs Styles -->
+      <style>
+        .course-tabs .filter-pill {
+          color: var(--primary-orange, #ff6b00);
+          border-color: var(--primary-orange, #ff6b00);
+          background-color: transparent;
+        }
+        .course-tabs .filter-pill:hover,
+        .course-tabs .filter-pill.active {
+          background-color: var(--primary-orange, #ff6b00);
+          color: var(--white, #ffffff);
+          border-color: var(--primary-orange, #ff6b00);
+        }
+      </style>
+
+      <!-- Course Tabs -->
+      <div class="course-tabs reveal" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+        <button class="filter-pill active" onclick="switchCourseTab('mbbs', this)">MBBS</button>
+        <button class="filter-pill" onclick="switchCourseTab('bds', this)">BDS</button>
+        <button class="filter-pill" onclick="switchCourseTab('bams', this)">BAMS</button>
+        <button class="filter-pill" onclick="switchCourseTab('bhms', this)">BHMS</button>
+      </div>
+
+      <!-- MBBS Timeline -->
+      <div id="timeline-mbbs" class="timeline-container">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">June 15, 2026</div>
+              <h4>NEET UG Results Declared</h4>
+              <p>NTA releases NEET UG 2026 results and scorecards on official website.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot active"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">July 1 – July 15, 2026</div>
-            <h4>Round 1 — Online Registration</h4>
-            <p>
-              Register on ACPUGMEC portal. Upload documents and pay
-              registration fee.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 1 – July 15, 2026</div>
+              <h4>MBBS Round 1 — Online Registration</h4>
+              <p>Register on ACPUGMEC portal. Upload documents and pay registration fee.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">July 16 – July 20, 2026</div>
-            <h4>Document Verification</h4>
-            <p>
-              Physical verification of original documents at designated help
-              centers.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 16 – July 20, 2026</div>
+              <h4>Document Verification</h4>
+              <p>Physical verification of original documents at designated help centers.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">July 21 – July 28, 2026</div>
-            <h4>Choice Filling & Locking</h4>
-            <p>
-              Fill college/course preferences. Lock choices before the
-              deadline.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 21 – July 28, 2026</div>
+              <h4>Choice Filling & Locking</h4>
+              <p>Fill MBBS college preferences. Lock choices before the deadline.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">August 1, 2026</div>
-            <h4>Round 1 Seat Allotment</h4>
-            <p>
-              First round allotment results published. Students must
-              accept/reject within 5 days.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 1, 2026</div>
+              <h4>Round 1 Seat Allotment</h4>
+              <p>First round MBBS allotment results published. Students must accept/reject within 5 days.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">August 15 – September 15, 2026</div>
-            <h4>Round 2 & Mop-Up Rounds</h4>
-            <p>
-              Subsequent rounds for vacant seats. New choice filling and
-              allotment rounds.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 15 – September 15, 2026</div>
+              <h4>Round 2 & Mop-Up Rounds</h4>
+              <p>Subsequent rounds for vacant seats. New choice filling and allotment rounds.</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">September 30, 2026</div>
-            <h4>Final Reporting Deadline</h4>
-            <p>
-              Last date to report to allotted college and complete admission
-              formalities.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 30, 2026</div>
+              <h4>Final Reporting Deadline</h4>
+              <p>Last date to report to allotted college and complete admission formalities.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- BDS Timeline -->
+      <div id="timeline-bds" class="timeline-container" style="display: none;">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">June 15, 2026</div>
+              <h4>NEET UG Results Declared</h4>
+              <p>NTA releases NEET UG 2026 results and scorecards on official website.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 5 – July 20, 2026</div>
+              <h4>BDS Round 1 — Online Registration</h4>
+              <p>Register on ACPUGMEC portal for BDS. Upload documents and pay registration fee.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 22 – July 25, 2026</div>
+              <h4>Document Verification</h4>
+              <p>Physical verification of original documents at designated help centers for BDS candidates.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">July 26 – August 2, 2026</div>
+              <h4>Choice Filling & Locking</h4>
+              <p>Fill BDS college preferences. Lock choices before the deadline.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 5, 2026</div>
+              <h4>Round 1 Seat Allotment</h4>
+              <p>First round BDS allotment results published. Students must accept/reject within 5 days.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 20 – September 20, 2026</div>
+              <h4>Round 2 & Mop-Up Rounds</h4>
+              <p>Subsequent rounds for vacant seats. New choice filling and allotment rounds.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">October 10, 2026</div>
+              <h4>Final Reporting Deadline</h4>
+              <p>Last date to report to allotted BDS college and complete admission formalities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAMS Timeline -->
+      <div id="timeline-bams" class="timeline-container" style="display: none;">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">June 15, 2026</div>
+              <h4>NEET UG Results Declared</h4>
+              <p>NTA releases NEET UG 2026 results and scorecards on official website.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 10 – August 25, 2026</div>
+              <h4>BAMS Round 1 — Online Registration</h4>
+              <p>Register on ACPUGMEC portal for BAMS courses. Upload documents and pay fee.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 26 – August 30, 2026</div>
+              <h4>Document Verification</h4>
+              <p>Physical verification of original documents at designated help centers for BAMS candidates.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 1 – September 7, 2026</div>
+              <h4>Choice Filling & Locking</h4>
+              <p>Fill BAMS college preferences. Lock choices before the deadline.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 12, 2026</div>
+              <h4>Round 1 Seat Allotment</h4>
+              <p>First round allotment results published for BAMS. Students must report within 5 days.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 25 – October 15, 2026</div>
+              <h4>Round 2 & Mop-Up Rounds</h4>
+              <p>Subsequent rounds for vacant seats in BAMS colleges.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">October 31, 2026</div>
+              <h4>Final Reporting Deadline</h4>
+              <p>Last date to report to allotted BAMS college and complete admission formalities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BHMS Timeline -->
+      <div id="timeline-bhms" class="timeline-container" style="display: none;">
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">June 15, 2026</div>
+              <h4>NEET UG Results Declared</h4>
+              <p>NTA releases NEET UG 2026 results and scorecards on official website.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">August 15 – August 30, 2026</div>
+              <h4>BHMS Round 1 — Online Registration</h4>
+              <p>Register on ACPUGMEC portal for BHMS courses. Upload documents and pay fee.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 1 – September 5, 2026</div>
+              <h4>Document Verification</h4>
+              <p>Physical verification of original documents at designated help centers for BHMS candidates.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 6 – September 12, 2026</div>
+              <h4>Choice Filling & Locking</h4>
+              <p>Fill BHMS college preferences. Lock choices before the deadline.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">September 18, 2026</div>
+              <h4>Round 1 Seat Allotment</h4>
+              <p>First round allotment results published for BHMS. Students must report within 5 days.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">October 1 – October 20, 2026</div>
+              <h4>Round 2 & Mop-Up Rounds</h4>
+              <p>Subsequent rounds for vacant seats in BHMS colleges.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">November 5, 2026</div>
+              <h4>Final Reporting Deadline</h4>
+              <p>Last date to report to allotted BHMS college and complete admission formalities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function switchCourseTab(course, element) {
+          // Update active state of tabs
+          var tabs = document.querySelectorAll('.course-tabs .filter-pill');
+          tabs.forEach(function(tab) {
+            tab.classList.remove('active');
+          });
+          element.classList.add('active');
+
+          // Toggle content visibility
+          document.getElementById('timeline-mbbs').style.display = course === 'mbbs' ? 'block' : 'none';
+          document.getElementById('timeline-bds').style.display = course === 'bds' ? 'block' : 'none';
+          document.getElementById('timeline-bams').style.display = course === 'bams' ? 'block' : 'none';
+          document.getElementById('timeline-bhms').style.display = course === 'bhms' ? 'block' : 'none';
+        }
+      </script>
     </div>
   </section>
 

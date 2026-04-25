@@ -37,12 +37,18 @@
       <nav class="nav-menu" id="navMenu">
         <a href="about-us.html">About Us</a>
         <a href="courses.html">Courses</a>
-        <a href="colleges.html">Colleges</a>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Colleges <i class="fa-solid fa-chevron-down"
+              style="font-size: 0.75rem;"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="colleges.html">Colleges info</a>
+            <a href="govt-scheme.html">Gov. Sche. info</a>
+            <a href="fees-structure.html">Fees info</a>
+          </div>
+        </div>
         <a href="videos.html">Videos</a>
         <a href="counselling.html">Counselling Process</a>
         <a href="pricing.html">Subscription</a>
-        <a href="fees-structure.html">Fees</a>
-        <a href="govt-scheme.html">Gov. Sche.</a>
       </nav>
       <div class="nav-actions">
         <a href="login.html" class="btn-login">Log In</a><a href="register.html" class="btn-register">Register Free</a>
@@ -104,8 +110,8 @@
         <div class="filter-pills">
           <button class="filter-pill active">All</button>
           <button class="filter-pill">Government</button>
-          <button class="filter-pill">Private</button>
-          <button class="filter-pill">Deemed</button>
+          <button class="filter-pill">Semi-Government (GMERS)</button>
+          <button class="filter-pill">Private / Trust</button>
         </div>
       </div>
 
@@ -116,6 +122,7 @@
           gap: 8px;
           flex-wrap: wrap;
         }
+
         .resource-link {
           text-decoration: none;
           color: var(--primary-blue);
@@ -130,11 +137,13 @@
           gap: 4px;
           border: 1px solid #bae6fd;
         }
+
         .resource-link:hover {
           background: var(--primary-blue);
           color: white;
           border-color: var(--primary-blue);
         }
+
         .btn-outline-primary {
           display: inline-block;
           padding: 8px 16px;
@@ -147,10 +156,12 @@
           font-size: 0.85rem;
           white-space: nowrap;
         }
+
         .btn-outline-primary:hover {
           background: var(--primary-blue);
           color: white;
         }
+
         .code-cell {
           font-family: monospace;
           font-weight: bold;
@@ -180,9 +191,13 @@
               <td><span class="table-badge govt">Govt</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -196,9 +211,13 @@
               <td><span class="table-badge govt">Govt</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -212,9 +231,13 @@
               <td><span class="table-badge govt">GMERS</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -228,9 +251,13 @@
               <td><span class="table-badge private">Private</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -244,9 +271,13 @@
               <td><span class="table-badge deemed">Trust</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -260,9 +291,13 @@
               <td><span class="table-badge govt">GMERS</span></td>
               <td>
                 <div class="resource-links">
-                  <a href="seat-matrix.html" class="resource-link"><i class="fa-solid fa-chair"></i> Matrix</a>
-                  <a href="fees-structure.html" class="resource-link"><i class="fa-solid fa-indian-rupee-sign"></i> Fees</a>
-                  <a href="#" class="resource-link"><i class="fa-solid fa-chart-line"></i> Cutoff</a>
+                  <a href="college-detail.html#seat-matrix" class="resource-link"><i class="fa-solid fa-chair"></i>
+                    Matrix</a>
+                  <a href="college-detail.html#fees-structure" class="resource-link"><i
+                      class="fa-solid fa-indian-rupee-sign"></i>
+                    Fees</a>
+                  <a href="college-detail.html#cutoff" class="resource-link"><i class="fa-solid fa-chart-line"></i>
+                    Cutoff</a>
                 </div>
               </td>
               <td>
@@ -345,7 +380,8 @@
           <h4>Resources</h4>
           <ul>
             <li>
-              <a href="seat-matrix.html" class="active"><i class="fa-solid fa-chevron-right"></i> Seat Matrix</a>
+              <a href="college-detail.html#seat-matrix" class="active"><i class="fa-solid fa-chevron-right"></i> Seat
+                Matrix</a>
             </li>
             <li>
               <a href="counselling.html"><i class="fa-solid fa-chevron-right"></i> Counselling
